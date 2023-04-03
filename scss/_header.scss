@@ -1,0 +1,48 @@
+@use 'variables';
+
+.top-header {
+    background-color: variables.$mainDark;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+
+    a {
+        max-width: 10%;
+
+        .img-logo {
+            width: 70%;
+        }
+    }
+
+    .box-search {
+        background-color: variables.$subGreen;
+        border: 2px solid variables.$mainDark;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 25%;
+        box-shadow: 3px 3px 3px variables.$mainGreen;
+        
+        input {
+            background-color: variables.$mainLight;
+            border: none;
+            border-right: 2px solid variables.$mainDark;
+            font-family: variables.$fontStaat;
+            font-size: 30px;
+            text-indent: 20px;
+            padding-right: 140px;
+            outline: none;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        button {
+            background-color: transparent;
+            border: none;
+            width: 20%;
+        }
+    }
+}

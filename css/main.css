@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kanit:ital@1&family=Oswald&family=Staatliches&family=Teko:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*::selection {
+  background-color: #17E7B7;
+  color: #0A261F;
+}
+
+.top-header {
+  background-color: #0A261F;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px;
+}
+.top-header a {
+  max-width: 10%;
+}
+.top-header a .img-logo {
+  width: 70%;
+}
+.top-header .box-search {
+  background-color: #17E7B7;
+  border: 2px solid #0A261F;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 25%;
+  box-shadow: 3px 3px 3px #51E5A1;
+}
+.top-header .box-search input {
+  background-color: #A1E5F5;
+  border: none;
+  border-right: 2px solid #0A261F;
+  font-family: "Staatliches", cursive;
+  font-size: 30px;
+  text-indent: 20px;
+  padding-right: 140px;
+  outline: none;
+}
+.top-header .box-search input:focus {
+  outline: none;
+}
+.top-header .box-search button {
+  background-color: transparent;
+  border: none;
+  width: 20%;
+}
+
+/*# sourceMappingURL=main.css.map */
