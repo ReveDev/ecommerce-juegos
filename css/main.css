@@ -30,6 +30,7 @@
   align-items: center;
   width: 25%;
   box-shadow: 3px 3px 3px #51E5A1;
+  margin-bottom: 10px;
 }
 .top-header .box-search input {
   background-color: #A1E5F5;
@@ -48,6 +49,37 @@
   background-color: transparent;
   border: none;
   width: 20%;
+}
+.top-header .box-search button:hover {
+  color: #A1E5F5;
+}
+.top-header .iconos-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+}
+.top-header .iconos-header button {
+  background-color: transparent;
+  border: none;
+  color: #A1E5F5;
+  font-family: "Teko", sans-serif;
+  font-size: 1.7em;
+  padding: 10px;
+}
+.top-header .iconos-header .iconos-header-simbolos {
+  transition: 0.5s, color 0.1s;
+}
+.top-header .iconos-header .iconos-header-simbolos:hover {
+  transform: scale3d(1.5, 1.5, 0.3);
+  color: #51E5A1;
+}
+.top-header .iconos-header .iconos-header-texto {
+  transition: 0.5s, color 0.1s;
+}
+.top-header .iconos-header .iconos-header-texto:hover {
+  color: #51E5A1;
+  transform: translate(0px, -7px);
 }
 
 /*# sourceMappingURL=main.css.map */
