@@ -1,0 +1,109 @@
+@use 'variables';
+
+.juegos {
+    background-color: variables.$mainDark;
+
+    h1 {
+        color: variables.$mainLight;
+        font-family: variables.$fontOver;
+        font-size: 3em;
+        font-style: italic;
+        padding-top: 20px;
+        text-align: center;
+        text-shadow: 2px 2px 3px variables.$mainGreen;
+    }
+
+    article {
+        ul {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding-top: 20px;
+
+            li {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                list-style-type: none;
+
+                h2 {
+                    color: variables.$subGreen;
+                    font-family: variables.$fontOswald;
+                    font-size: 1.1em;
+                    word-spacing: 2px;
+                    padding-bottom: 30px;
+                }
+
+                img {
+                    width: 70%;
+                    border-radius: 8px;
+                    transition: .5s, color .10s;
+
+                    &:hover {
+                        box-shadow: 0 2px 30px 0 variables.$mainGreen, 0 2px 30px 0 variables.$subGreen;
+                        transform: scale3d(1.1, 1.1, 0.3);
+                    }
+                }
+
+                span {
+                    color: variables.$mainGreen;
+                    font-family: variables.$fontBebas;
+                    font-size: 1.5em;
+                    word-spacing: 2px;
+                    padding-top: 30px;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}
+
+.medios-pagos {
+    background-color: variables.$mainDark;
+
+    article {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h3 {
+            color: variables.$subGreen;
+            font-family: variables.$fontKanit;
+            font-size: 2em;
+            padding-left: 10px;
+            padding-top: 80px;
+            text-decoration: underline;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            li {
+                background-color: variables.$subGreen;
+                border: 5px solid variables.$mainLight;
+                border-radius: 8px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                margin: 20px;
+                list-style-type: none;
+                width: 50%;
+    
+                img {
+                    width: 7%;
+
+                    &:nth-child(7),
+                    &:nth-child(8),
+                    &:nth-child(9) {
+                        width: 12%;
+                    }
+                }
+            }
+        }
+    }
+}

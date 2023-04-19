@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kanit:ital@1&family=Oswald&family=Staatliches&family=Teko:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kanit:ital@1&family=Oswald&family=Overpass&family=Staatliches&family=Teko:wght@500&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -26,32 +26,24 @@
   background-color: #17E7B7;
   border: 2px solid #0A261F;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   width: 25%;
   box-shadow: 3px 3px 3px #51E5A1;
   margin-bottom: 10px;
 }
+.top-header .box-search i {
+  margin-left: 10px;
+}
 .top-header .box-search input {
-  background-color: #A1E5F5;
+  background-color: #17E7B7;
   border: none;
-  border-right: 2px solid #0A261F;
   font-family: "Staatliches", cursive;
   font-size: 30px;
   text-indent: 20px;
-  padding-right: 140px;
   outline: none;
 }
 .top-header .box-search input:focus {
   outline: none;
-}
-.top-header .box-search button {
-  background-color: transparent;
-  border: none;
-  width: 20%;
-}
-.top-header .box-search button:hover {
-  color: #A1E5F5;
 }
 .top-header .iconos-header {
   display: flex;
@@ -65,7 +57,7 @@
   color: #A1E5F5;
   font-family: "Teko", sans-serif;
   font-size: 1.7em;
-  padding: 10px;
+  padding: 20px;
 }
 .top-header .iconos-header .iconos-header-simbolos {
   transition: 0.5s, color 0.1s;
@@ -75,11 +67,134 @@
   color: #51E5A1;
 }
 .top-header .iconos-header .iconos-header-texto {
+  color: #51E5A1;
+  display: inline-block;
+  position: relative;
+}
+.top-header .iconos-header .iconos-header-texto::after {
+  content: "";
+  position: absolute;
+  width: 90%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: 10px;
+  left: 8px;
+  background-color: #17E7B7;
+  transform-origin: center;
+  transition: transform 0.25s ease-out;
+}
+.top-header .iconos-header .iconos-header-texto:hover::after {
+  transform: scaleX(1);
+  transform-origin: center;
+}
+
+.bottom-header {
+  background-color: #17E7B7;
+}
+.bottom-header li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Bebas Neue", cursive;
+}
+.bottom-header li a {
+  color: #0A261F;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+.bottom-header li ul li {
+  visibility: hidden;
+}
+
+.juegos {
+  background-color: #0A261F;
+}
+.juegos h1 {
+  color: #A1E5F5;
+  font-family: "Overpass", sans-serif;
+  font-size: 3em;
+  font-style: italic;
+  padding-top: 20px;
+  text-align: center;
+  text-shadow: 2px 2px 3px #51E5A1;
+}
+.juegos article ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 20px;
+}
+.juegos article ul li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+}
+.juegos article ul li h2 {
+  color: #17E7B7;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.1em;
+  word-spacing: 2px;
+  padding-bottom: 30px;
+}
+.juegos article ul li img {
+  width: 70%;
+  border-radius: 8px;
   transition: 0.5s, color 0.1s;
 }
-.top-header .iconos-header .iconos-header-texto:hover {
+.juegos article ul li img:hover {
+  box-shadow: 0 2px 30px 0 #51E5A1, 0 2px 30px 0 #17E7B7;
+  transform: scale3d(1.1, 1.1, 0.3);
+}
+.juegos article ul li span {
   color: #51E5A1;
-  transform: translate(0px, -7px);
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.5em;
+  word-spacing: 2px;
+  padding-top: 30px;
+  margin-bottom: 10px;
+}
+
+.medios-pagos {
+  background-color: #0A261F;
+}
+.medios-pagos article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.medios-pagos article h3 {
+  color: #17E7B7;
+  font-family: "Kanit", sans-serif;
+  font-size: 2em;
+  padding-left: 10px;
+  padding-top: 80px;
+  text-decoration: underline;
+}
+.medios-pagos article ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.medios-pagos article ul li {
+  background-color: #17E7B7;
+  border: 5px solid #A1E5F5;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px;
+  list-style-type: none;
+  width: 50%;
+}
+.medios-pagos article ul li img {
+  width: 7%;
+}
+.medios-pagos article ul li img:nth-child(7), .medios-pagos article ul li img:nth-child(8), .medios-pagos article ul li img:nth-child(9) {
+  width: 12%;
 }
 
 /*# sourceMappingURL=main.css.map */

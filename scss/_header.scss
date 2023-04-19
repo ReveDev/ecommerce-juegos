@@ -19,34 +19,25 @@
         background-color: variables.$subGreen;
         border: 2px solid variables.$mainDark;
         display: flex;
-        justify-content: space-between;
         align-items: center;
         width: 25%;
         box-shadow: 3px 3px 3px variables.$mainGreen;
         margin-bottom: 10px;
+
+        i {
+            margin-left: 10px;
+        }
         
         input {
-            background-color: variables.$mainLight;
+            background-color: variables.$subGreen;
             border: none;
-            border-right: 2px solid variables.$mainDark;
             font-family: variables.$fontStaat;
             font-size: 30px;
             text-indent: 20px;
-            padding-right: 140px;
             outline: none;
 
             &:focus {
                 outline: none;
-            }
-        }
-
-        button {
-            background-color: transparent;
-            border: none;
-            width: 20%;
-
-            &:hover {
-                color: variables.$mainLight;
             }
         }
     }
@@ -63,7 +54,7 @@
             color: variables.$mainLight;
             font-family: variables.$fontTeko;
             font-size: 1.7em;
-            padding: 10px;
+            padding: 20px;
         }
         
         .iconos-header-simbolos {
@@ -76,11 +67,49 @@
         }
 
         .iconos-header-texto {
-            transition: .5s, color .10s;
+            color: variables.$mainGreen;
+            display: inline-block;
+            position: relative;
 
-            &:hover {
-                color: variables.$mainGreen;
-                transform: translate(0px,-7px);
+            &::after {
+                content: '';
+                position: absolute;
+                width: 90%;
+                transform: scaleX(0);
+                height: 3px;
+                bottom: 10px;
+                left: 8px;
+                background-color: variables.$subGreen;
+                transform-origin: center;
+                transition: transform 0.25s ease-out;
+            }
+
+            &:hover::after {
+                transform: scaleX(1);
+                transform-origin: center;
+            }
+        }
+    }
+}
+
+.bottom-header {
+    background-color: variables.$subGreen;
+
+    li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: variables.$fontBebas;
+
+        a {
+            color: variables.$mainDark;
+            font-size: 1.5em;
+            text-decoration: none;
+        }
+
+        ul {
+            li {
+                visibility: hidden;
             }
         }
     }
