@@ -1,4 +1,6 @@
 let usuario = prompt("Ingresa tu nombre");
+const INT6 = 1.25;
+const INT12 = 1.60;
 
 function saludar(nombre) {
     alert("Hola " + nombre + " bienvenido a Revein Games.");
@@ -313,130 +315,130 @@ if(elegirJuego === "si" || elegirJuego === "SI" || elegirJuego === "Si") {
 };
 
 while (elegirJuego !== "no") {
-    let juegoCarrito = Number(prompt(`Selecciona uno de los juegos disponibles:
+    let juegoCarrito = Number(prompt(`Escribi con número el juego que desees agregar a tu carrito: 1) Call of Duty® - Modern Warfare® 2 // 2) Tom Clancy's Rainbow Six® Siege // 3) Halo: The Master Chief Collection // 4) Devil May Cry 5 // 5) God of War // 6) Hades // 7) EA SPORTS™ FIFA 23 // 8) NBA 2K23 // 9) WWE 2K23 // 10) Forza Horizon 5 // 11) BeamNG.drive // 12) Assetto Corsa Competizione // 13) Cult of the Lamb // 14) RimWorld // 15) Cities: Skylines // 16) Crusader Kings III // 17) Age of Empires II: Definitive Edition // 18) Total War: WARHAMMER III // 19) Star Wars Jedi: Survivor™ // 20) Elden Ring // 21) Sekiro™: Shadows Die Twice - GOTY Edition // 22) Rust // 23) Subnautica // 24) Resident Evil 4 // 25) Hogwarts Legacy // 26) Monster Hunter: World // 27) New World // 28) FINAL FANTASY VII REMAKE INTERGRADE // 29) Persona 5 Royal // 30) DRAGON BALL Z: KAKAROT`));
 
-                        1) Call of Duty® - Modern Warfare® 2
-                        2) Tom Clancy's Rainbow Six® Siege
-                        3) Halo: The Master Chief Collection
-                        4) Devil May Cry 5
-                        5) God of War
-                        6) Hades
-                        7) EA SPORTS™ FIFA 23
-                        8) NBA 2K23
-                        9) WWE 2K23
-                        10) Forza Horizon 5
-                        11) BeamNG.drive
-                        12) Assetto Corsa Competizione
-                        13) Cult of the Lamb
-                        14) RimWorld
-                        15) Cities: Skylines
-                        16) Crusader Kings III
-                        17) Age of Empires II: Definitive Edition
-                        18) Total War: WARHAMMER III
-                        19) Star Wars Jedi: Survivor™
-                        20) Elden Ring
-                        21) Sekiro™: Shadows Die Twice - GOTY Edition
-                        22) Rust
-                        23) Subnautica
-                        24) Resident Evil 4
-                        25) Hogwarts Legacy
-                        26) Monster Hunter: World
-                        27) New World
-                        28) FINAL FANTASY VII REMAKE INTERGRADE
-                        29) Persona 5 Royal
-                        30) DRAGON BALL Z: KAKAROT`));
     let precioJuego = 0
 
     if(juegoCarrito == 1 || juegoCarrito == 2 || juegoCarrito == 3 || juegoCarrito == 4 || juegoCarrito == 5 || juegoCarrito == 6 || juegoCarrito == 7 || juegoCarrito == 8 || juegoCarrito == 9 || juegoCarrito == 10 || juegoCarrito == 11 || juegoCarrito == 12 || juegoCarrito == 13 || juegoCarrito == 14 || juegoCarrito == 15 || juegoCarrito == 16 || juegoCarrito == 17 || juegoCarrito == 18 || juegoCarrito == 19 || juegoCarrito == 20 || juegoCarrito == 21 || juegoCarrito == 22 || juegoCarrito == 23 || juegoCarrito == 24 || juegoCarrito == 25 || juegoCarrito == 26 || juegoCarrito == 27 || juegoCarrito == 28 || juegoCarrito == 29 || juegoCarrito == 30) {
         switch(juegoCarrito) {
             case 1:
+                juegoCarrito = "Call of Duty® - Modern Warfare® 2";
                 precioJuego = 6990;
             break;
             case 2:
+                juegoCarrito = "Tom Clancy's Rainbow Six® Siege";
                 precioJuego = 1999;
             break;
             case 3:
+                juegoCarrito = "Halo: The Master Chief Collection";
                 precioJuego = 3999;
             break;
             case 4:
+                juegoCarrito = "Devil May Cry 5";
                 precioJuego = 2420;
             break;
             case 5:
+                juegoCarrito = "God of War";
                 precioJuego = 8499;
             break;
             case 6:
+                juegoCarrito = "Hades";
                 precioJuego = 1750;
             break;
             case 7:
+                juegoCarrito = "EA SPORTS™ FIFA 23";
                 precioJuego = 8999;
             break;
             case 8:
+                juegoCarrito = "NBA 2K23";
                 precioJuego = 6999;
             break;
             case 9:
+                juegoCarrito = "WWE 2K23";
                 precioJuego = 7999;
             break;
             case 10:
+                juegoCarrito = "Forza Horizon 5";
                 precioJuego = 5999;
             break;
             case 11:
+                juegoCarrito = "BeamNG.drive";
                 precioJuego = 1750;
             break;
             case 12:
+                juegoCarrito = "Assetto Corsa Competizione";
                 precioJuego = 1499;
             break;
             case 13:
+                juegoCarrito = "Cult of the Lamb";
                 precioJuego = 1199;
             break;
             case 14:
+                juegoCarrito = "RimWorld";
                 precioJuego = 2100;
             break;
             case 15:
+                juegoCarrito = "Cities: Skylines";
                 precioJuego = 2100;
             break;
             case 16:
+                juegoCarrito = "Crusader Kings III";
                 precioJuego = 3200;
             break;
             case 17:
+                juegoCarrito = "Age of Empires II: Definitive Edition";
                 precioJuego = 1999;
             break;
             case 18:
+                juegoCarrito = "Total War: WARHAMMER III";
                 precioJuego = 7999;
             break;
             case 19:
+                juegoCarrito = "STAR WARS Jedi: Survivor™";
                 precioJuego = 8999;
             break;
             case 20:
+                juegoCarrito = "Elden Ring";
                 precioJuego = 8599;
             break;
             case 21:
+                juegoCarrito = "Sekiro™: Shadows Die Twice - GOTY Edition";
                 precioJuego = 1299;
             break;
             case 22:
+                juegoCarrito = "Rust";
                 precioJuego = 2440;
             break;
             case 23:
+                juegoCarrito = "Subnautica";
                 precioJuego = 1499;
             break;
             case 24:
+                juegoCarrito = "Resident Evil 4";
                 precioJuego = 12958;
             break;
             case 25:
+                juegoCarrito = "Hogwarts Legacy";
                 precioJuego = 8599;
             break;
             case 26:
+                juegoCarrito = "Monster Hunter: World";
                 precioJuego = 2420;
             break;
             case 27:
+                juegoCarrito = "New World";
                 precioJuego = 2600;
             break;
             case 28:
+                juegoCarrito = "FINAL FANTASY VII REMAKE INTERGRADE";
                 precioJuego = 7700;
             break;
             case 29:
+                juegoCarrito = "Persona 5 Royal";
                 precioJuego = 7999;
             break;
             case 30:
+                juegoCarrito = "DRAGON BALL Z: KAKAROT";
                 precioJuego = 7119;
             break;
         };
@@ -457,7 +459,7 @@ while (elegirJuego !== "no") {
             alert(`Su carrito tiene:
                 Juego: ${juegosTotal.juegoCarrito}
                 Cantidad: ${juegosTotal.cantUnidades}
-                Total por juego: ${juegosTotal.cantUnidades * juegosTotal.precioJuego}`)
+                Total: ARS$${juegosTotal.cantUnidades * juegosTotal.precioJuego}`)
         });
     break;
     }
@@ -466,3 +468,52 @@ while (elegirJuego !== "no") {
 const totalCompra = carroCompras.reduce((acc, total) => acc + total.precioJuego * total.cantUnidades, 0);
 
 alert(`El total de tu compra es de ARS$ ${totalCompra.toLocaleString()}`);
+
+function comprar() {
+    while(totalCompra != 0) {
+        medioPago = prompt(`Medios de pago disponibles:
+
+                    1) Tarjeta de Crédito
+                    2) Efectivo
+                    3) Transferencia Bancaria`);
+        
+        if(medioPago == "tarjeta" || medioPago == "visa" || medioPago == "master" || medioPago == "1") {
+            alert("Has seleccionado tarjeta de crédito. Aceptamos Visa, Master, Amex, Cabal y Naranja.");
+
+            cantCuotas = prompt(`Ingrese en cuantas cuotas hará el pago:
+            
+                            1 cuota sin interes
+                            3 cuotas sin intereses
+                            6 cuotas - intereses del 25%
+                            12 cuotas - intereses del 60%`);
+
+            switch(cantCuotas) {
+                case "1":
+                    alert(`Has seleccionado 1 cuota. El total es de ARS$${totalCompra.toLocaleString()}.`);
+                    break;
+                case "3":
+                    alert(`Has seleccionado 3 cuotas. El total es de ARS$${totalCompra.toLocaleString()}. A pagar en 3 cuotas de ARS$${(totalCompra / cantCuotas).toFixed(2).toLocaleString()}.`);
+                    break;
+                case "6":
+                    alert(`Has seleccionado 6 cuotas. El total es de ARS$${(totalCompra * INT6).toFixed(2).toLocaleString()}. A pagar en 6 cuotas de ARS$${((totalCompra * INT6) / cantCuotas).toFixed(2).toLocaleString()}.`);
+                    break;
+                case "12":
+                    alert(`Has seleccionado 12 cuotas. El total es de ARS$${(totalCompra * INT12).toFixed(2).toLocaleString()}. A pagar en 12 cuotas de ARS$${((totalCompra * INT12) / cantCuotas).toFixed(2).toLocaleString()}.`);
+                    break;
+                default:
+                    alert("La cantidad de cuotas ingresada es inválida.");
+            } 
+        } else if(medioPago == "efectivo" || medioPago == "2") {
+            alert(`Has seleccionado efectivo. El total es de ARS$ ${totalCompra.toLocaleString()}.`);
+            alert("Finalizada la compra se te enviará por mail una boleta para abonar en tu Rapipago o PagoFacil más cercano. Una vez se nos acredite el pago, te será enviada por mail la clave para ingresar en Steam y obtener tu juego.");
+        } else if (medioPago == "transferencia" || medioPago == "transfer" || medioPago == "3") {
+            alert(`Has seleccionado transferencia. El total es de ARS$ ${totalCompra.toLocaleString()}.`);
+            alert("Finalizada la compra se te enviará por mail los datos bancarios para realizar la transferencia a nuestra cuenta en Banco BBVA o a nuestra cuenta en MercadoPago. Una vez se nos acredite el pago, te será enviada por mail la clave para ingresar en Steam y obtener tu juego.");
+        } else {
+            alert("El medio de pago ingresado es inválido, ingrese el número correcto.");
+        }
+
+        break;
+    } 
+}
+comprar();
