@@ -1,16 +1,8 @@
-let usuario = prompt("Ingresa tu nombre");
-const INT6 = 1.25;
-const INT12 = 1.60;
-
-function saludar(nombre) {
-    alert("Hola " + nombre + " bienvenido a Revein Games.");
-}
-saludar(usuario);
-
 const juegos = [
     {
         id: 0,
         nombre: "Call of Duty® - Modern Warfare® 2",
+        portada: "./img/webimages/games/codmw2.webp",
         genero: "Accion",
         tipo: "First Person Shooter",
         precio: 6990,
@@ -18,6 +10,7 @@ const juegos = [
     {
         id: 1,
         nombre: "Tom Clancy's Rainbow Six® Siege",
+        portada: "./img/webimages/games/tcrss.webp",
         genero: "Accion",
         tipo: "First Person Shooter",
         precio: 1999,
@@ -25,6 +18,7 @@ const juegos = [
     {
         id: 2,
         nombre: "Halo: The Master Chief Collection",
+        portada: "./img/webimages/games/htmcc.webp",
         genero: "Accion",
         tipo: "First Person Shooter",
         precio: 3999,
@@ -32,6 +26,7 @@ const juegos = [
     {
         id: 3,
         nombre: "Devil May Cry 5",
+        portada: "./img/webimages/games/dmc5.webp",
         genero: "Accion",
         tipo: "Hack and Slash",
         precio: 2420, 
@@ -39,6 +34,7 @@ const juegos = [
     {
         id: 4,
         nombre: "God of War",
+        portada: "./img/webimages/games/gow.webp",
         genero: "Accion",
         tipo: "Hack and Slash",
         precio: 8499,
@@ -46,6 +42,7 @@ const juegos = [
     {
         id: 5,
         nombre: "Hades",
+        portada: "./img/webimages/games/hades.webp",
         genero: "Accion",
         tipo: "Hack and Slash",
         precio: 1750,
@@ -53,6 +50,7 @@ const juegos = [
     {
         id: 6,
         nombre: "EA SPORTS™ FIFA 23",
+        portada: "./img/webimages/games/f23.webp",
         genero: "Deportes",
         tipo: "Simulador Deportivo",
         precio: 8999,
@@ -60,6 +58,7 @@ const juegos = [
     {
         id: 7,
         nombre: "NBA 2K23",
+        portada: "./img/webimages/games/nba2k23.webp",
         genero: "Deportes",
         tipo: "Simulador Deportivo",
         precio: 6999,
@@ -67,6 +66,7 @@ const juegos = [
     {
         id: 8,
         nombre: "WWE 2K23",
+        portada: "./img/webimages/games/wwe2k23.webp",
         genero: "Deportes",
         tipo: "Simulador Deportivo",
         precio: 7999,
@@ -74,6 +74,7 @@ const juegos = [
     {
         id: 9,
         nombre: "Forza Horizon 5",
+        portada: "./img/webimages/games/fh5.webp",
         genero: "Deportes",
         tipo: "Carreras",
         precio: 5999,
@@ -81,6 +82,7 @@ const juegos = [
     {
         id: 10,
         nombre: "BeamNG.drive",
+        portada: "./img/webimages/games/bngd.webp",
         genero: "Deportes",
         tipo: "Carreras",
         precio: 1750,
@@ -88,6 +90,7 @@ const juegos = [
     {
         id: 11,
         nombre: "Assetto Corsa Competizione",
+        portada: "./img/webimages/games/acc.webp",
         genero: "Deportes",
         tipo: "Carreras",
         precio: 1499,
@@ -95,6 +98,7 @@ const juegos = [
     {
         id: 12,
         nombre: "Cult of the Lamb",
+        portada: "./img/webimages/games/cotl.webp",
         genero: "Estrategia",
         tipo: "Ciudades y Asentamientos",
         precio: 1199,
@@ -102,6 +106,7 @@ const juegos = [
     {
         id: 13,
         nombre: "RimWorld",
+        portada: "./img/webimages/games/rw.webp",
         genero: "Estrategia",
         tipo: "Ciudades y Asentamientos",
         precio: 2100,
@@ -109,6 +114,7 @@ const juegos = [
     {
         id: 14,
         nombre: "Cities: Skylines",
+        portada: "./img/webimages/games/cs.webp",
         genero: "Estrategia",
         tipo: "Ciudades y Asentamientos",
         precio: 2100,
@@ -116,6 +122,7 @@ const juegos = [
     {
         id: 15,
         nombre: "Crusader Kings III",
+        portada: "./img/webimages/games/ck3.webp",
         genero: "Estrategia",
         tipo: "Estrategia en Tiempo Real",
         precio: 3200,
@@ -123,6 +130,7 @@ const juegos = [
     {
         id: 16,
         nombre: "Age of Empires II: Definitive Edition",
+        portada: "./img/webimages/games/aoe2de.webp",
         genero: "Estrategia",
         tipo: "Estrategia en Tiempo Real",
         precio: 1999,
@@ -130,6 +138,7 @@ const juegos = [
     {
         id: 17,
         nombre: "Total War: WARHAMMER III",
+        portada: "./img/webimages/games/tww3.webp",
         genero: "Estrategia",
         tipo: "Estrategia en Tiempo Real",
         precio: 7999,
@@ -137,6 +146,7 @@ const juegos = [
     {
         id: 18,
         nombre: "STAR WARS Jedi: Survivor™",
+        portada: "./img/webimages/games/swjs.webp",
         genero: "Aventuras",
         tipo: "Souls Like",
         precio: 8999,
@@ -144,13 +154,15 @@ const juegos = [
     {
         id: 19,
         nombre: "Elden Ring",
+        portada: "./img/webimages/games/er.webp",
         genero: "Aventuras",
         tipo: "Souls Like",
         precio: 8599,
     },
     {
         id: 20,
-        nombre: "Sekiro™: Shadows Die Twice - GOTY Edition",
+        nombre: "Sekiro™: Shadows Die Twice",
+        portada: "./img/webimages/games/ssdwgoty.webp",
         genero: "Aventuras",
         tipo: "Souls Like",
         precio: 1299,
@@ -158,6 +170,7 @@ const juegos = [
     {
         id: 21,
         nombre: "Rust",
+        portada: "./img/webimages/games/rust.webp",
         genero: "Aventuras",
         tipo: "Supervivencia",
         precio: 2440,
@@ -165,6 +178,7 @@ const juegos = [
     {
         id: 22,
         nombre: "Subnautica",
+        portada: "./img/webimages/games/sn.webp",
         genero: "Aventuras",
         tipo: "Supervivencia",
         precio: 1499,
@@ -172,6 +186,7 @@ const juegos = [
     {
         id: 23,
         nombre: "Resident Evil 4",
+        portada: "./img/webimages/games/re4r.webp",
         genero: "Aventuras",
         tipo: "Supervivencia",
         precio: 12958,
@@ -179,6 +194,7 @@ const juegos = [
     {
         id: 24,
         nombre: "Hogwarts Legacy",
+        portada: "./img/webimages/games/hl.webp",
         genero: "Rol",
         tipo: "Mundo Abierto",
         precio: 8599,
@@ -186,6 +202,7 @@ const juegos = [
     {
         id: 25,
         nombre: "Monster Hunter: World",
+        portada: "./img/webimages/games/mhw.webp",
         genero: "Rol",
         tipo: "Mundo Abierto",
         precio: 2420,
@@ -193,6 +210,7 @@ const juegos = [
     {
         id: 26,
         nombre: "New World",
+        portada: "./img/webimages/games/nw.webp",
         genero: "Rol",
         tipo: "Mundo Abierto",
         precio: 2600,
@@ -200,6 +218,7 @@ const juegos = [
     {
         id: 27,
         nombre: "FINAL FANTASY VII REMAKE INTERGRADE",
+        portada: "./img/webimages/games/ff7ri.webp",
         genero: "Rol",
         tipo: "Estilo Japones",
         precio: 7700,
@@ -207,6 +226,7 @@ const juegos = [
     {
         id: 28,
         nombre: "Persona 5 Royal",
+        portada: "./img/webimages/games/p5r.webp",
         genero: "Rol",
         tipo: "Estilo Japones",
         precio: 7999,
@@ -214,6 +234,7 @@ const juegos = [
     {
         id: 29,
         nombre: "DRAGON BALL Z: KAKAROT",
+        portada: "./img/webimages/games/dbzk.webp",
         genero: "Rol",
         tipo: "Estilo Japones",
         precio: 7119,
@@ -222,298 +243,89 @@ const juegos = [
 
 let carroCompras = [];
 
-let elegirJuego = prompt("Está interesado en comprar algun juego? - Escriba si o no");
+// CARGA DE JUEGOS AL HTML
+const juegosContainer = document.querySelector('.juegos-container');
 
-while(elegirJuego !== "si" && elegirJuego !== "no") {
-    alert("Por favor escriba si o no");
-    elegirJuego = prompt("Está interesado en comprar algun juego? - Escriba si o no");
-};
+function ingresarJuegos() {
+    juegos.forEach(juego => {
+        const div = document.createElement("div");
+        div.classList.add("juego");
+        div.innerHTML = `
+        <img src="${juego.portada}" alt="${juego.nombre}">
+        <div class="info-juego">
+            <h2>${juego.nombre}</h2>
+            <p>ARS$ ${(juego.precio).toLocaleString()}</p>
+            <button class="boton-favoritos"><i class="fa-solid fa-heart-circle-plus fa-sm"></i></button>
+            <button class="boton-compra"><i class="fa-solid fa-cart-plus fa-sm"></i></button>
+        </div> `
 
-if(elegirJuego === "si" || elegirJuego === "SI" || elegirJuego === "Si") {
-    alert("Contamos con un catálogo de 30 juegos dividido en 5 géneros que detallamos a continuación.");
-    let catalogo = prompt("Desea ver el catálogo entero o filtrarlo por género o por tipo - Escriba entero, genero o tipo");
-    switch(catalogo) {
-        case "entero":
-            let catalogoEntero = juegos.map((juego) => juego.nombre + " " + "ARS$" + juego.precio);
-            alert(catalogoEntero.join(" / "));
-        break;
-        case "genero":
-            let genero = prompt("Escriba uno de los 5 generos disponibles: accion, deportes, estrategia, aventuras o rol");
-            if(genero == "accion") {
-                const generoAccion = juegos.filter((juego) => juego.genero.includes("Accion"));
-                const resultadoAccion = generoAccion.map((accion) => accion.nombre + " " + "ARS$" + accion.precio);
-                alert("Estos son los juegos de acción disponibles: " + resultadoAccion.join(" // "));
-            } else if(genero == "deportes") {
-                const generoDeportes = juegos.filter((juego) => juego.genero.includes("Deportes"));
-                const resultadoDeportes = generoDeportes.map((deportes) => deportes.nombre + " " + "ARS$" + deportes.precio);
-                alert("Estos son los juegos de deportes disponibles: " + resultadoDeportes.join(" // "));
-            } else if(genero == "estrategia") {
-                const generoEstrategia = juegos.filter((juego) => juego.genero.includes("Estrategia"));
-                const resultadoEstrategia = generoEstrategia.map((estrategia) => estrategia.nombre + " " + "ARS$" + estrategia.precio);
-                alert("Estos son los juegos de estrategia disponibles: " + resultadoEstrategia.join(" // "));
-            } else if(genero == "aventuras") {
-                const generoAventuras = juegos.filter((juego) => juego.genero.includes("Aventuras"));
-                const resultadoAventuras = generoAventuras.map((aventuras) => aventuras.nombre + " " + "ARS$" + aventuras.precio);
-                alert("Estos son los juegos de aventuras disponibles: " + resultadoAventuras.join(" // "));
-            } else if(genero == "rol") {
-                const generoRol = juegos.filter((juego) => juego.genero.includes("Rol"));
-                const resultadoRol = generoRol.map((rol) => rol.nombre + " " + "ARS$" + rol.precio)
-                alert("Estos son los juegos de rol disponibles: " + resultadoRol.join(" // "));
-            } else {
-                alert("El genero ingresado no esta disponible en el catalogo");
-            }
-        break;
-        case "tipo":
-            let tipo = prompt("Escriba uno de los 10 tipos disponibles: fps, hack and slash, simulador deportivo, carreras, ciudades y asentamientos, estrategia en tiempo real, souls like, supervivencia, mundo abierto o estilo japones");
-            if(tipo == "fps" || tipo == "shooter" || tipo == "first person shooter") {
-                const tipoFps = juegos.filter((juego) => juego.tipo.includes("First Person Shooter"));
-                const resultadoFps = tipoFps.map((fps) => fps.nombre + " " + "ARS$" + fps.precio);
-                alert("Estos son los juegos de disparos en primera persona disponibles: " + resultadoFps.join(" // "));
-            } else if(tipo == "hack and slash" || tipo == "hack" || tipo == "slash" || tipo == "hs") {
-                const tipoHack = juegos.filter((juego) => juego.tipo.includes("Hack and Slash"));
-                const resultadoHack = tipoHack.map((hack) => hack.nombre + " " + "ARS$" + hack.precio);
-                alert("Estos son los juegos de hack and slash disponibles: " + resultadoHack.join(" // "));
-            } else if(tipo == "simulador deportivo" || tipo == "simulador" || tipo == "deportivo") {
-                const tipoDeportivo = juegos.filter((juego) => juego.tipo.includes("Simulador Deportivo"));
-                const resultadoDeportivo = tipoDeportivo.map((deportivo) => deportivo.nombre + " " + "ARS$" + deportivo.precio);
-                alert("Estos son los juegos de simulador deportivo disponibles: " + resultadoDeportivo.join(" // "));
-            } else if(tipo == "carreras") {
-                const tipoCarreras = juegos.filter((juego) => juego.tipo.includes("Carreras"));
-                const resultadoCarreras = tipoCarreras.map((carreras) => carreras.nombre + " " + "ARS$" + carreras.precio);
-                alert("Estos son los juegos de carreras disponibles: " + resultadoCarreras.join(" // "));
-            } else if(tipo == "ciudades y asentamientos" || tipo == "ciudades" || tipo == "asentamientos") {
-                const tipoCiudades = juegos.filter((juego) => juego.tipo.includes("Ciudades y Asentamientos"));
-                const resultadoCiudades = tipoCiudades.map((ciudades) => ciudades.nombre + " " + "ARS$" + ciudades.precio);
-                alert("Estos son los juegos de ciudades y asentamientos disponibles: " + resultadoCiudades.join(" // "));
-            } else if(tipo == "estrategia en tiempo real" || tipo == "estrategia" || tipo == "tiempo real") {
-                const tipoEtr = juegos.filter((juego) => juego.tipo.includes("Estrategia en Tiempo Real"));
-                const resultadoEtr = tipoEtr.map((etr) => etr.nombre + " " + "ARS$" + etr.precio);
-                alert("Estos son los juegos de estrategia en tiempo real disponibles: " + resultadoEtr.join(" // "));
-            } else if(tipo == "souls like" || tipo == "souls") {
-                const tipoSouls = juegos.filter((juego) => juego.tipo.includes("Souls Like"));
-                const resultadoSouls = tipoSouls.map((souls) => souls.nombre + " " + "ARS$" + souls.precio);
-                alert("Estos son los juegos estilo souls like disponibles: " + resultadoSouls.join(" // "));
-            } else if(tipo == "supervivencia") {
-                const tipoSuperv = juegos.filter((juego) => juego.tipo.includes("Supervivencia"));
-                const resultadoSuperv = tipoSuperv.map((superv) => superv.nombre + " " + "ARS$" + superv.precio);
-                alert("Estos son los juegos de supervivencia disponibles: " + resultadoSuperv.join(" // "));
-            } else if(tipo == "mundo abierto" || tipo == "mundo" || tipo == "abierto") {
-                const tipoMundo = juegos.filter((juego) => juego.tipo.includes("Mundo Abierto"));
-                const resultadoMundo = tipoMundo.map((mundo) => mundo.nombre + " " + "ARS$" + mundo.precio);
-                alert("Estos son los juegos de mundo abierto disponibles: " + resultadoMundo.join(" // "));
-            } else if(tipo == "estilo japones" || tipo == "japones") {
-                const tipoJapones = juegos.filter((juego) => juego.tipo.includes("Estilo Japones"));
-                const resultadoJapones = tipoJapones.map((japones) => japones.nombre + " " + "ARS$" + japones.precio);
-                alert("Estos son los juegos de estilo japones disponibles: " + resultadoJapones.join(" // "));
-            } else {
-                alert("El tipo ingresado no esta disponible en el catalogo");
-            }
-        break;
-    };
-} else if(elegirJuego === "no" || elegirJuego === "NO" || elegirJuego === "No") {
-    alert("Gracias por visitar nuestra tienda. Que tenga un buen día.");
-};
+        juegosContainer.append(div);
+    });
+}
+ingresarJuegos();
 
-while (elegirJuego !== "no") {
-    let juegoCarrito = Number(prompt(`Escribi con número el juego que desees agregar a tu carrito: 1) Call of Duty® - Modern Warfare® 2 // 2) Tom Clancy's Rainbow Six® Siege // 3) Halo: The Master Chief Collection // 4) Devil May Cry 5 // 5) God of War // 6) Hades // 7) EA SPORTS™ FIFA 23 // 8) NBA 2K23 // 9) WWE 2K23 // 10) Forza Horizon 5 // 11) BeamNG.drive // 12) Assetto Corsa Competizione // 13) Cult of the Lamb // 14) RimWorld // 15) Cities: Skylines // 16) Crusader Kings III // 17) Age of Empires II: Definitive Edition // 18) Total War: WARHAMMER III // 19) Star Wars Jedi: Survivor™ // 20) Elden Ring // 21) Sekiro™: Shadows Die Twice - GOTY Edition // 22) Rust // 23) Subnautica // 24) Resident Evil 4 // 25) Hogwarts Legacy // 26) Monster Hunter: World // 27) New World // 28) FINAL FANTASY VII REMAKE INTERGRADE // 29) Persona 5 Royal // 30) DRAGON BALL Z: KAKAROT`));
+//JUEGOS CAROUSEL CONTROL
+const carouselSlide = document.querySelectorAll('.slide');
+const controlCarousel = document.querySelectorAll('.control-carousel');
+let carouselIndex = 0;
+mostrarSlide(carouselIndex);
 
-    let precioJuego = 0
-
-    if(juegoCarrito == 1 || juegoCarrito == 2 || juegoCarrito == 3 || juegoCarrito == 4 || juegoCarrito == 5 || juegoCarrito == 6 || juegoCarrito == 7 || juegoCarrito == 8 || juegoCarrito == 9 || juegoCarrito == 10 || juegoCarrito == 11 || juegoCarrito == 12 || juegoCarrito == 13 || juegoCarrito == 14 || juegoCarrito == 15 || juegoCarrito == 16 || juegoCarrito == 17 || juegoCarrito == 18 || juegoCarrito == 19 || juegoCarrito == 20 || juegoCarrito == 21 || juegoCarrito == 22 || juegoCarrito == 23 || juegoCarrito == 24 || juegoCarrito == 25 || juegoCarrito == 26 || juegoCarrito == 27 || juegoCarrito == 28 || juegoCarrito == 29 || juegoCarrito == 30) {
-        switch(juegoCarrito) {
-            case 1:
-                juegoCarrito = "Call of Duty® - Modern Warfare® 2";
-                precioJuego = 6990;
-            break;
-            case 2:
-                juegoCarrito = "Tom Clancy's Rainbow Six® Siege";
-                precioJuego = 1999;
-            break;
-            case 3:
-                juegoCarrito = "Halo: The Master Chief Collection";
-                precioJuego = 3999;
-            break;
-            case 4:
-                juegoCarrito = "Devil May Cry 5";
-                precioJuego = 2420;
-            break;
-            case 5:
-                juegoCarrito = "God of War";
-                precioJuego = 8499;
-            break;
-            case 6:
-                juegoCarrito = "Hades";
-                precioJuego = 1750;
-            break;
-            case 7:
-                juegoCarrito = "EA SPORTS™ FIFA 23";
-                precioJuego = 8999;
-            break;
-            case 8:
-                juegoCarrito = "NBA 2K23";
-                precioJuego = 6999;
-            break;
-            case 9:
-                juegoCarrito = "WWE 2K23";
-                precioJuego = 7999;
-            break;
-            case 10:
-                juegoCarrito = "Forza Horizon 5";
-                precioJuego = 5999;
-            break;
-            case 11:
-                juegoCarrito = "BeamNG.drive";
-                precioJuego = 1750;
-            break;
-            case 12:
-                juegoCarrito = "Assetto Corsa Competizione";
-                precioJuego = 1499;
-            break;
-            case 13:
-                juegoCarrito = "Cult of the Lamb";
-                precioJuego = 1199;
-            break;
-            case 14:
-                juegoCarrito = "RimWorld";
-                precioJuego = 2100;
-            break;
-            case 15:
-                juegoCarrito = "Cities: Skylines";
-                precioJuego = 2100;
-            break;
-            case 16:
-                juegoCarrito = "Crusader Kings III";
-                precioJuego = 3200;
-            break;
-            case 17:
-                juegoCarrito = "Age of Empires II: Definitive Edition";
-                precioJuego = 1999;
-            break;
-            case 18:
-                juegoCarrito = "Total War: WARHAMMER III";
-                precioJuego = 7999;
-            break;
-            case 19:
-                juegoCarrito = "STAR WARS Jedi: Survivor™";
-                precioJuego = 8999;
-            break;
-            case 20:
-                juegoCarrito = "Elden Ring";
-                precioJuego = 8599;
-            break;
-            case 21:
-                juegoCarrito = "Sekiro™: Shadows Die Twice - GOTY Edition";
-                precioJuego = 1299;
-            break;
-            case 22:
-                juegoCarrito = "Rust";
-                precioJuego = 2440;
-            break;
-            case 23:
-                juegoCarrito = "Subnautica";
-                precioJuego = 1499;
-            break;
-            case 24:
-                juegoCarrito = "Resident Evil 4";
-                precioJuego = 12958;
-            break;
-            case 25:
-                juegoCarrito = "Hogwarts Legacy";
-                precioJuego = 8599;
-            break;
-            case 26:
-                juegoCarrito = "Monster Hunter: World";
-                precioJuego = 2420;
-            break;
-            case 27:
-                juegoCarrito = "New World";
-                precioJuego = 2600;
-            break;
-            case 28:
-                juegoCarrito = "FINAL FANTASY VII REMAKE INTERGRADE";
-                precioJuego = 7700;
-            break;
-            case 29:
-                juegoCarrito = "Persona 5 Royal";
-                precioJuego = 7999;
-            break;
-            case 30:
-                juegoCarrito = "DRAGON BALL Z: KAKAROT";
-                precioJuego = 7119;
-            break;
-        };
-
-        let cantUnidades = Number(prompt("Cuantas unidades del juego quiere agregar?"));
-
-        carroCompras.push({juegoCarrito, cantUnidades, precioJuego});
-    } else {
-        alert("El juego ingresado no se encuentra disponible en la tienda.");
-    };
-
-    elegirJuego = prompt("Desea seguir agregando juegos a tu carrito?");
-
-    while(elegirJuego === "no") {
-        alert("Gracias por su compra. Que disfrute sus nuevos juegos.");
-
-        carroCompras.forEach((juegosTotal) => {
-            alert(`Su carrito tiene:
-                Juego: ${juegosTotal.juegoCarrito}
-                Cantidad: ${juegosTotal.cantUnidades}
-                Total: ARS$${juegosTotal.cantUnidades * juegosTotal.precioJuego}`)
-        });
-    break;
-    }
+function actualCarousel(n) {
+  mostrarSlide(carouselIndex = n);
 }
 
-const totalCompra = carroCompras.reduce((acc, total) => acc + total.precioJuego * total.cantUnidades, 0);
+function mostrarSlide(n) {
+  let i;
 
-alert(`El total de tu compra es de ARS$ ${totalCompra.toLocaleString()}`);
+  if(n < 1) {
+    carouselIndex = carouselSlide.length;
+  }
 
-function comprar() {
-    while(totalCompra != 0) {
-        medioPago = prompt(`Medios de pago disponibles:
+  for(i = 0; i < carouselSlide.length; i++) {
+    carouselSlide[i].style.display = "none";
+  }
+  carouselIndex++;
 
-                    1) Tarjeta de Crédito
-                    2) Efectivo
-                    3) Transferencia Bancaria`);
-        
-        if(medioPago == "tarjeta" || medioPago == "visa" || medioPago == "master" || medioPago == "1") {
-            alert("Has seleccionado tarjeta de crédito. Aceptamos Visa, Master, Amex, Cabal y Naranja.");
+  if(carouselIndex > carouselSlide.length) {
+    carouselIndex = 1;
+  }
+  carouselSlide[carouselIndex-1].style.display = "block";
 
-            cantCuotas = prompt(`Ingrese en cuantas cuotas hará el pago:
-            
-                            1 cuota sin interes
-                            3 cuotas sin intereses
-                            6 cuotas - intereses del 25%
-                            12 cuotas - intereses del 60%`);
-
-            switch(cantCuotas) {
-                case "1":
-                    alert(`Has seleccionado 1 cuota. El total es de ARS$${totalCompra.toLocaleString()}.`);
-                    break;
-                case "3":
-                    alert(`Has seleccionado 3 cuotas. El total es de ARS$${totalCompra.toLocaleString()}. A pagar en 3 cuotas de ARS$${(totalCompra / cantCuotas).toFixed(2).toLocaleString()}.`);
-                    break;
-                case "6":
-                    alert(`Has seleccionado 6 cuotas. El total es de ARS$${(totalCompra * INT6).toFixed(2).toLocaleString()}. A pagar en 6 cuotas de ARS$${((totalCompra * INT6) / cantCuotas).toFixed(2).toLocaleString()}.`);
-                    break;
-                case "12":
-                    alert(`Has seleccionado 12 cuotas. El total es de ARS$${(totalCompra * INT12).toFixed(2).toLocaleString()}. A pagar en 12 cuotas de ARS$${((totalCompra * INT12) / cantCuotas).toFixed(2).toLocaleString()}.`);
-                    break;
-                default:
-                    alert("La cantidad de cuotas ingresada es inválida.");
-            } 
-        } else if(medioPago == "efectivo" || medioPago == "2") {
-            alert(`Has seleccionado efectivo. El total es de ARS$ ${totalCompra.toLocaleString()}.`);
-            alert("Finalizada la compra se te enviará por mail una boleta para abonar en tu Rapipago o PagoFacil más cercano. Una vez se nos acredite el pago, te será enviada por mail la clave para ingresar en Steam y obtener tu juego.");
-        } else if (medioPago == "transferencia" || medioPago == "transfer" || medioPago == "3") {
-            alert(`Has seleccionado transferencia. El total es de ARS$ ${totalCompra.toLocaleString()}.`);
-            alert("Finalizada la compra se te enviará por mail los datos bancarios para realizar la transferencia a nuestra cuenta en Banco BBVA o a nuestra cuenta en MercadoPago. Una vez se nos acredite el pago, te será enviada por mail la clave para ingresar en Steam y obtener tu juego.");
-        } else {
-            alert("El medio de pago ingresado es inválido, ingrese el número correcto.");
-        }
-
-        break;
-    } 
+  for(i = 0; i < controlCarousel.length; i++) {
+    controlCarousel[i].className = controlCarousel[i].className.replace(" active", "");
+  }
+  controlCarousel[carouselIndex-1].className += " active";
 }
-comprar();
+
+controlCarousel.forEach((lines, index) => {
+  lines.addEventListener('click', () => {
+    actualCarousel(index);
+  });
+});
+
+setInterval(() => {
+  mostrarSlide();
+}, 5000);
+
+// REVIEWS SLIDER CONTROL
+const reviewSlides = document.querySelectorAll('.reviews-article');
+const dots = document.querySelectorAll('.dot');
+let actualSlide = 0;
+
+function mostrarSlideReviews(n) {
+  reviewSlides[actualSlide].classList.remove('active');
+  dots[actualSlide].classList.remove('active');
+  actualSlide = (n + reviewSlides.length) % reviewSlides.length;
+  reviewSlides[actualSlide].classList.add('active');
+  dots[actualSlide].classList.add('active');
+}
+
+dots.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    mostrarSlideReviews(index);
+  });
+});
+
+setInterval(() => {
+  mostrarSlideReviews(actualSlide + 1);
+}, 6000);

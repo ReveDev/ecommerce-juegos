@@ -94,22 +94,54 @@
 
 .bottom-header {
     background-color: variables.$subGreen;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: hidden;
 
-    li {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: variables.$fontBebas;
-
-        a {
-            color: variables.$mainDark;
-            font-size: 1.5em;
-            text-decoration: none;
+    .dropdown {
+        &:hover {
+            .boton-drop-items {
+                display: block;
+            }
         }
 
-        ul {
-            li {
-                visibility: hidden;
+        .boton-drop {
+            font-size: 2em;
+            border: none;
+            outline: none;
+            color: variables.$mainDark;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: variables.$fontBebas;
+            margin: 0;
+    
+            &:hover {
+                background-color: variables.$mainLight;
+            }
+        }
+    
+        .boton-drop-items {
+            display: none;
+            position: absolute;
+            background-color: variables.$subGreen;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+    
+            a {
+                float: none;
+                font-family: variables.$fontStaat;
+                font-size: 1.5em;
+                color: variables.$mainDark;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+
+                &:hover {
+                    background-color: variables.$mainLight;
+                }
             }
         }
     }

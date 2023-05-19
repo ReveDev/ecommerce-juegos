@@ -1,0 +1,263 @@
+@use 'variables';
+
+footer {
+    background-color: variables.$mainLight;
+
+    .inner-footer {
+        padding-top: 10px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 200px 1fr;
+        justify-items: center;
+        align-items: center;
+        grid-template-areas: 
+            "formulario redes"
+            "reviews    reviews";
+
+        .footer-form {
+            max-width: 35vw;
+            grid-area: formulario;
+        
+            h4 {
+                color: variables.$mainDark;
+                font-family: variables.$fontBebas;
+                font-size: 2em;
+                padding: 10px;
+
+                span {
+                    color: variables.$mainRed;
+                }
+            }
+            
+            .input-group {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .input {
+                    min-height: 50px;
+                    min-width: 400px;
+                    padding: 0 1rem;
+                    font-size: 25px;
+                    font-family: variables.$fontTeko;
+                    border: 1px solid variables.$mainDark;
+                    border-radius: 6px 0 0 6px;
+                    background-color: variables.$mainGreen;
+
+                    &:focus,
+                    &:focus-visible {
+                        border-color: variables.$subGreen;
+                        outline: none;
+                    }
+                }
+
+                .button-submit {
+                    min-height: 50px;
+                    min-width: 100px;
+                    padding: .5em 1em;
+                    border: none;
+                    border-radius: 0 6px 6px 0;
+                    background-color: variables.$mainDark;
+                    font-family: variables.$fontStaat;
+                    font-size: 20px;
+                    color: variables.$mainLight;
+                    cursor: pointer;
+                    transition: background-color .3s ease-in-out;
+
+                    &:hover {
+                        color: variables.$mainDark;
+                        background-color: variables.$subGreen;
+                    }
+                }
+            }
+        }
+
+        .redes-sociales {
+            max-width: 35vw;
+            grid-area: redes;
+
+            h4 {
+                color: variables.$mainDark;
+                font-family: variables.$fontStaat;
+                font-size: 2.5em;
+                text-align: center;
+                text-decoration: underline;
+            }
+
+            .enlaces-redes {
+                display: flex;
+                justify-content: space-between;
+                align-content: center;
+                margin-top: 30px;
+
+                .boton-redes-discord,
+                .boton-redes-github,
+                .boton-redes-linkedin {
+                    position: relative;
+                    background-color: transparent;
+                    color: variables.$subGreen;
+                    font-family: variables.$fontOver;
+                    font-size: 17px;
+                    border-radius: 10px;
+                    width: 125px;
+                    height: 70px;
+                    border: none;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    overflow: hidden;
+                    box-shadow: 0 10px 20px rgba(51, 51, 51, 0.2);
+                    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+
+                    &::before {
+                        content: "";
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 100%;
+                        height: 100%;
+                        pointer-events: none;
+                        background: linear-gradient(135deg,variables.$mainGold,variables.$mainRed);
+                        transform: translate(0%,90%);
+                        z-index: 99;
+                        position: relative;
+                        transform-origin: bottom;
+                        transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+                    }
+
+                    &::after {
+                        content: "Seguime!";
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: variables.$mainDark;
+                        width: 100%;
+                        height: 100%;
+                        pointer-events: none;
+                        transform-origin: top;
+                        transform: translate(0%,-100%);
+                        transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+                    }
+
+                    &:hover::before {
+                        transform: translate(0%,0%);
+                    }
+
+                    &:hover::after {
+                        transform: translate(0%,-200%);
+                    }
+
+                    &:focus {
+                        outline: none;
+                    }
+
+                    &:active {
+                        scale: 0.95;
+                    }
+                }
+
+                .boton-redes-discord {
+                    &::before {
+                        content: url("../img/webicons/rrss/discord.png");
+                    }
+                }
+
+                .boton-redes-github {
+                    &::before {
+                        content: url("../img/webicons/rrss/github.png");
+                    }
+                }
+
+                .boton-redes-linkedin {
+                    &::before {
+                        content: url("../img/webicons/rrss/linkedin.png");
+                    }
+                }
+            } 
+        }
+
+        .reviews-container {
+            max-width: 60vw;
+            grid-area: reviews;
+            margin: 0 auto;
+
+            h4 {
+                color: variables.$mainRed;
+                font-family: variables.$fontTeko;
+                font-style: italic;
+                font-size: 2.25em;
+                margin-top: 10px;
+                text-decoration: underline;
+                text-align: center;
+            }
+
+            .reviews-slider {
+                display: flex;
+                overflow: hidden;
+
+                .reviews-article {
+                    flex: 1;
+                    padding: 20px;
+                    text-align: center;
+                    opacity: 0;
+                    transition: opacity 0.5s ease-in-out;
+
+                    &.active {
+                        opacity: 1;
+                    }
+
+                    img {
+                        width: 50%;
+                        border-radius: 50%;
+                    }
+
+                    h5 {
+                        color: variables.$mainDark;
+                        font-family: variables.$fontStaat;
+                        font-size: 2.5em;
+                    }
+
+                    .fa-star {
+                        color: variables.$mainGold;
+                        margin-top: 5px;
+                        text-shadow: 4px 4px 4px variables.$mainDark;
+                    }
+
+                    p {
+                        color: variables.$mainDark;
+                        font-family: variables.$fontOswald;
+                        font-size: 1.25em;
+                        margin-top: 10px;
+                    }
+                }
+            }
+
+            .reviews-dots {
+                display: flex;
+                justify-content: center;
+
+                .dot {
+                    height: 10px;
+                    width: 10px;
+                    border-radius: 50%;
+                    background-color: variables.$mainDark;
+                    margin: 10px 5px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease-in-out;
+
+                    &.active {
+                        background-color: variables.$mainRed;
+                    }
+                }
+            }
+        }
+    }
+
+    p {
+        color: variables.$mainDark;
+        font-family: variables.$fontFjalla;
+        font-size: 1.25em;
+        font-style: italic;
+        padding: 5px;
+        text-align: center;
+    }
+}

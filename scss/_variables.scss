@@ -1,8 +1,16 @@
 // FUENTES
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kanit:ital@1&family=Oswald&family=Overpass&family=Staatliches&family=Teko:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Black+Ops+One&family=Fjalla+One&family=Kanit:ital@1&family=Oswald&family=Overpass&family=Press+Start+2P&family=Special+Elite&family=Staatliches&family=Teko:wght@500&display=swap');
+
+$font2P: 'Press Start 2P', cursive;
 
 $fontBebas: 'Bebas Neue', cursive;
+
+$fontBlack: 'Black Ops One', cursive;
+
+$fontElite: 'Special Elite', cursive;
+
+$fontFjalla: 'Fjalla One', sans-serif;
 
 $fontKanit: 'Kanit', sans-serif;
 
@@ -14,7 +22,6 @@ $fontStaat: 'Staatliches', cursive;
 
 $fontTeko: 'Teko', sans-serif;
 
-
 // PALETA DE COLORES
 
 $mainGreen: #51E5A1;
@@ -24,3 +31,11 @@ $subGreen: #17E7B7;
 $mainLight: #A1E5F5;
 
 $mainDark: #0A261F;
+
+$mainRed: #D72323;
+
+$mainGold: #FFD700;
+
+$subDark: #260A13;
+
+$mainBlue: #2323D7;

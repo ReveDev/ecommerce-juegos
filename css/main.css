@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kanit:ital@1&family=Oswald&family=Overpass&family=Staatliches&family=Teko:wght@500&display=swap");
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Black+Ops+One&family=Fjalla+One&family=Kanit:ital@1&family=Oswald&family=Overpass&family=Press+Start+2P&family=Special+Elite&family=Staatliches&family=Teko:wght@500&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -90,111 +91,603 @@
 
 .bottom-header {
   background-color: #17E7B7;
-}
-.bottom-header li {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Bebas Neue", cursive;
-}
-.bottom-header li a {
-  color: #0A261F;
-  font-size: 1.5em;
-  text-decoration: none;
-}
-.bottom-header li ul li {
-  visibility: hidden;
-}
-
-.juegos {
-  background-color: #0A261F;
-}
-.juegos h1 {
-  color: #A1E5F5;
-  font-family: "Overpass", sans-serif;
-  font-size: 3em;
-  font-style: italic;
-  padding-top: 20px;
-  text-align: center;
-  text-shadow: 2px 2px 3px #51E5A1;
-}
-.juegos article ul {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding-top: 20px;
+  overflow: hidden;
 }
-.juegos article ul li {
+.bottom-header .dropdown:hover .boton-drop-items {
+  display: block;
+}
+.bottom-header .dropdown .boton-drop {
+  font-size: 2em;
+  border: none;
+  outline: none;
+  color: #0A261F;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: "Bebas Neue", cursive;
+  margin: 0;
+}
+.bottom-header .dropdown .boton-drop:hover {
+  background-color: #A1E5F5;
+}
+.bottom-header .dropdown .boton-drop-items {
+  display: none;
+  position: absolute;
+  background-color: #17E7B7;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.bottom-header .dropdown .boton-drop-items a {
+  float: none;
+  font-family: "Staatliches", cursive;
+  font-size: 1.5em;
+  color: #0A261F;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.bottom-header .dropdown .boton-drop-items a:hover {
+  background-color: #A1E5F5;
+}
+
+.juegos-mas-vendidos {
+  background-color: #17E7B7;
+}
+.juegos-mas-vendidos .carousel-box {
   display: flex;
   flex-direction: column;
+  align-content: space-evenly;
+  justify-items: center;
+}
+.juegos-mas-vendidos .carousel-box h1 {
+  color: #0A261F;
+  font-family: "Press Start 2P", cursive;
+  font-size: 2.75em;
+  font-style: italic;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  text-align: center;
+  text-shadow: 3px 3px 3px #260A13;
+}
+.juegos-mas-vendidos .carousel-box .carousel-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+.juegos-mas-vendidos .carousel-box .carousel-container .slide {
+  display: none;
+  animation-name: fade;
+  animation-duration: 1.5s;
+  padding-top: 10px;
+}
+.juegos-mas-vendidos .carousel-box .carousel-container .slide span {
+  position: absolute;
+  overflow: hidden;
+  width: 500px;
+  height: 1100px;
+  top: -10px;
+  left: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.juegos-mas-vendidos .carousel-box .carousel-container .slide span::before {
+  content: "";
+  position: absolute;
+  width: 150%;
+  height: 60px;
+  background-image: linear-gradient(45deg, #51E5A1 0%, #FFD700 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0A261F;
+  font-family: "Staatliches", cursive;
+  font-size: 2em;
+  font-style: italic;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.juegos-mas-vendidos .carousel-box .carousel-container .slide span::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  border: 2px solid #260A13;
+  bottom: 0;
+  left: 0;
+  height: 10px;
+  z-index: -1;
+}
+.juegos-mas-vendidos .carousel-box .carousel-container .slide .slider-fifa::before {
+  content: "EA SPORTS™ FIFA 23";
+}
+.juegos-mas-vendidos .carousel-box .carousel-container .slide .slider-crusader::before {
+  content: "Crusader Kings III";
+}
+.juegos-mas-vendidos .carousel-box .carousel-container .slide .slider-cod::before {
+  font-size: 1.75em;
+  content: "Call of Duty® - Modern Warfare® 2";
+}
+.juegos-mas-vendidos .carousel-box .carousel-container .slide .slider-sw::before {
+  content: "STAR WARS Jedi: Survivor™";
+}
+.juegos-mas-vendidos .carousel-box .carousel-container .slide .slider-hogwarts::before {
+  content: "Hogwarts Legacy";
+}
+.juegos-mas-vendidos .carousel-box .carousel-container .slide img {
+  border-radius: 8px;
+}
+.juegos-mas-vendidos .carousel-box .carousel-container .slide button {
+  position: absolute;
+  bottom: 50px;
+  right: 100px;
+  width: 180px;
+  height: 55px;
+  background-color: #D72323;
+  border: none;
+  border-radius: 50px;
+  color: #A1E5F5;
+  font-family: "Staatliches", cursive;
+  font-size: 1.25em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  box-shadow: 1px 3px 0px #FFD700;
+  transition-duration: 0.3s;
+}
+.juegos-mas-vendidos .carousel-box .carousel-container .slide button:active {
+  transform: translate(2px, 0px);
+  box-shadow: 0px 1px 0px #51E5A1;
+  padding-bottom: 1px;
+}
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.juegos-mas-vendidos .carousel-box .control-container {
+  margin-bottom: 10px;
+  text-align: center;
+}
+.juegos-mas-vendidos .carousel-box .control-container .control-carousel {
+  display: inline-block;
+  position: relative;
+  margin: auto 5px;
+  border-radius: 2px;
+  width: 41px;
+  height: 4px;
+  cursor: pointer;
+  background-color: #0A261F;
+  transition: background-color 0.6s ease;
+}
+.juegos-mas-vendidos .carousel-box .control-container .control-carousel:hover {
+  background-color: #FFD700;
+}
+.juegos-mas-vendidos .carousel-box .control-container .active {
+  border: 1px solid #260A13;
+  height: 5px;
+  background-color: #D72323;
+}
+
+.catalogo-juegos {
+  background-color: #0A261F;
+  display: flex;
   justify-content: center;
   align-items: center;
-  list-style-type: none;
+  padding: 40px 10px;
 }
-.juegos article ul li h2 {
-  color: #17E7B7;
-  font-family: "Oswald", sans-serif;
-  font-size: 1.1em;
-  word-spacing: 2px;
-  padding-bottom: 30px;
+.catalogo-juegos .juegos-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  width: 80%;
 }
-.juegos article ul li img {
-  width: 70%;
-  border-radius: 8px;
-  transition: 0.5s, color 0.1s;
+.catalogo-juegos .juegos-container .juego {
+  background-color: #260A13;
+  border: 2px solid #A1E5F5;
+  border-radius: 5px;
+  width: 300px;
+  height: 500px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-content: space-between;
+  margin-left: 30px;
+  margin-bottom: 20px;
+  padding: 10px;
+  position: relative;
+  text-align: center;
 }
-.juegos article ul li img:hover {
+.catalogo-juegos .juegos-container .juego:hover {
   box-shadow: 0 2px 30px 0 #51E5A1, 0 2px 30px 0 #17E7B7;
   transform: scale3d(1.1, 1.1, 0.3);
 }
-.juegos article ul li span {
-  color: #51E5A1;
+.catalogo-juegos .juegos-container .juego img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 2px solid #0A261F;
+}
+.catalogo-juegos .juegos-container .juego .info-juego {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 150px 50px 150px;
+  justify-items: center;
+  align-items: center;
+  grid-template-areas: "titulo titulo" "precio precio" "fav    cart";
+}
+.catalogo-juegos .juegos-container .juego .info-juego h2 {
+  grid-area: titulo;
+  color: #A1E5F5;
   font-family: "Bebas Neue", cursive;
+  font-size: 2.5em;
+  margin-top: 10px;
+}
+.catalogo-juegos .juegos-container .juego .info-juego p {
+  grid-area: precio;
+  text-align: center;
+  color: #FFD700;
+  font-family: "Press Start 2P", cursive;
   font-size: 1.5em;
-  word-spacing: 2px;
-  padding-top: 30px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-shadow: 2px 2px 2px #0A261F;
+}
+.catalogo-juegos .juegos-container .juego .info-juego .boton-favoritos {
+  grid-area: fav;
+  background-color: #D72323;
+  border: 2px solid #17E7B7;
+  border-radius: 5px;
+  color: #A1E5F5;
+  cursor: pointer;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px 20px;
+  margin-top: 20px;
   margin-bottom: 10px;
+  transition: 0.5s, color 0.1s;
+  width: 60%;
+}
+.catalogo-juegos .juegos-container .juego .info-juego .boton-favoritos:active {
+  transform: translate(-2px, 0px);
+  box-shadow: 0px 1px 0px #A1E5F5;
+}
+.catalogo-juegos .juegos-container .juego .info-juego .boton-compra {
+  grid-area: cart;
+  background-color: #2323D7;
+  border: 2px solid #17E7B7;
+  border-radius: 5px;
+  color: #A1E5F5;
+  cursor: pointer;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  transition: 0.5s, color 0.1s;
+  width: 60%;
+}
+.catalogo-juegos .juegos-container .juego .info-juego .boton-compra:active {
+  transform: translate(2px, 0px);
+  box-shadow: 0px 1px 0px #51E5A1;
+}
+.catalogo-juegos .filtros {
+  position: relative;
+  top: -2000px;
+  left: 30px;
+  width: 25%;
+}
+.catalogo-juegos .filtros .filtros-juegos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.catalogo-juegos .filtros .filtros-juegos h3 {
+  font-family: "Black Ops One", cursive;
+  font-size: 2em;
+  color: #FFD700;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+.catalogo-juegos .filtros .filtros-juegos .filtro-box {
+  margin: 5px;
+  display: flex;
+}
+.catalogo-juegos .filtros .filtros-juegos .filtro-box .filtro-input {
+  display: none;
+}
+.catalogo-juegos .filtros .filtros-juegos .filtro-box .filtro-input:checked + .filtro-label .boton-filtro {
+  background-color: #D72323;
+  color: #A1E5F5;
+  box-shadow: rgba(0, 0, 0, 0.23) 0px -4px 1px 0px inset, rgba(255, 255, 255, 0.17) 0px -1px 1px 0px, rgba(0, 0, 0, 0.17) 0px 2px 4px 1px;
+}
+.catalogo-juegos .filtros .filtros-juegos .filtro-box .filtro-input:checked + .filtro-label .boton-filtro .boton-filtro-inner {
+  transform: translateY(-2px);
+}
+.catalogo-juegos .filtros .filtros-juegos .filtro-box .filtro-input:checked + .filtro-label .boton-filtro:hover {
+  background-color: #D72323;
+  box-shadow: rgba(0, 0, 0, 0.26) 0px -4px 1px 0px inset, rgba(255, 255, 255, 0.17) 0px -1px 1px 0px, rgba(0, 0, 0, 0.15) 0px 3px 6px 2px;
+}
+.catalogo-juegos .filtros .filtros-juegos .filtro-box .filtro-label .boton-filtro {
+  width: fit-content;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+  padding: 2px 8px;
+  background-color: #51E5A1;
+  border-radius: 0px;
+  color: #0A261F;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 300ms;
+  transition-property: color, background-color, box-shadow;
+  display: flex;
+  height: 50px;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 1px 0px inset, rgba(255, 255, 255, 0.17) 0px 1px 1px 0px;
+  outline: none;
+  justify-content: center;
+  min-width: 70px;
+}
+.catalogo-juegos .filtros .filtros-juegos .filtro-box .filtro-label .boton-filtro:hover {
+  background-color: #D72323;
+  color: #A1E5F5;
+  box-shadow: rgba(0, 0, 0, 0.23) 0px -4px 1px 0px inset, rgba(255, 255, 255, 0.17) 0px -1px 1px 0px, rgba(0, 0, 0, 0.17) 0px 2px 4px 1px;
+}
+.catalogo-juegos .filtros .filtros-juegos .filtro-box .filtro-label .boton-filtro:hover .boton-filtro-inner {
+  transform: translateY(-2px);
+}
+.catalogo-juegos .filtros .filtros-juegos .filtro-box .filtro-label .boton-filtro .boton-filtro-inner {
+  font-family: "Staatliches", cursive;
+  font-size: 1.75em;
+  pointer-events: none;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 300ms;
+  transition-property: transform;
+  transform: translateY(0px);
 }
 
-.medios-pagos {
-  background-color: #0A261F;
+footer {
+  background-color: #A1E5F5;
 }
-.medios-pagos article {
+footer .inner-footer {
+  padding-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 200px 1fr;
+  justify-items: center;
+  align-items: center;
+  grid-template-areas: "formulario redes" "reviews    reviews";
+}
+footer .inner-footer .footer-form {
+  max-width: 35vw;
+  grid-area: formulario;
+}
+footer .inner-footer .footer-form h4 {
+  color: #0A261F;
+  font-family: "Bebas Neue", cursive;
+  font-size: 2em;
+  padding: 10px;
+}
+footer .inner-footer .footer-form h4 span {
+  color: #D72323;
+}
+footer .inner-footer .footer-form .input-group {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.medios-pagos article h3 {
-  color: #17E7B7;
-  font-family: "Kanit", sans-serif;
-  font-size: 2em;
-  padding-left: 10px;
-  padding-top: 80px;
+footer .inner-footer .footer-form .input-group .input {
+  min-height: 50px;
+  min-width: 400px;
+  padding: 0 1rem;
+  font-size: 25px;
+  font-family: "Teko", sans-serif;
+  border: 1px solid #0A261F;
+  border-radius: 6px 0 0 6px;
+  background-color: #51E5A1;
+}
+footer .inner-footer .footer-form .input-group .input:focus, footer .inner-footer .footer-form .input-group .input:focus-visible {
+  border-color: #17E7B7;
+  outline: none;
+}
+footer .inner-footer .footer-form .input-group .button-submit {
+  min-height: 50px;
+  min-width: 100px;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 0 6px 6px 0;
+  background-color: #0A261F;
+  font-family: "Staatliches", cursive;
+  font-size: 20px;
+  color: #A1E5F5;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+footer .inner-footer .footer-form .input-group .button-submit:hover {
+  color: #0A261F;
+  background-color: #17E7B7;
+}
+footer .inner-footer .redes-sociales {
+  max-width: 35vw;
+  grid-area: redes;
+}
+footer .inner-footer .redes-sociales h4 {
+  color: #0A261F;
+  font-family: "Staatliches", cursive;
+  font-size: 2.5em;
+  text-align: center;
   text-decoration: underline;
 }
-.medios-pagos article ul {
+footer .inner-footer .redes-sociales .enlaces-redes {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+  margin-top: 30px;
+}
+footer .inner-footer .redes-sociales .enlaces-redes .boton-redes-discord,
+footer .inner-footer .redes-sociales .enlaces-redes .boton-redes-github,
+footer .inner-footer .redes-sociales .enlaces-redes .boton-redes-linkedin {
+  position: relative;
+  background-color: transparent;
+  color: #17E7B7;
+  font-family: "Overpass", sans-serif;
+  font-size: 17px;
+  border-radius: 10px;
+  width: 125px;
+  height: 70px;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(51, 51, 51, 0.2);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+footer .inner-footer .redes-sociales .enlaces-redes .boton-redes-discord::before,
+footer .inner-footer .redes-sociales .enlaces-redes .boton-redes-github::before,
+footer .inner-footer .redes-sociales .enlaces-redes .boton-redes-linkedin::before {
+  content: "";
+  display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: center;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(135deg, #FFD700, #D72323);
+  transform: translate(0%, 90%);
+  z-index: 99;
+  position: relative;
+  transform-origin: bottom;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
-.medios-pagos article ul li {
-  background-color: #17E7B7;
-  border: 5px solid #A1E5F5;
-  border-radius: 8px;
+footer .inner-footer .redes-sociales .enlaces-redes .boton-redes-discord::after,
+footer .inner-footer .redes-sociales .enlaces-redes .boton-redes-github::after,
+footer .inner-footer .redes-sociales .enlaces-redes .boton-redes-linkedin::after {
+  content: "Seguime!";
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  margin: 20px;
-  list-style-type: none;
+  justify-content: center;
+  background-color: #0A261F;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transform-origin: top;
+  transform: translate(0%, -100%);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+footer .inner-footer .redes-sociales .enlaces-redes .boton-redes-discord:hover::before,
+footer .inner-footer .redes-sociales .enlaces-redes .boton-redes-github:hover::before,
+footer .inner-footer .redes-sociales .enlaces-redes .boton-redes-linkedin:hover::before {
+  transform: translate(0%, 0%);
+}
+footer .inner-footer .redes-sociales .enlaces-redes .boton-redes-discord:hover::after,
+footer .inner-footer .redes-sociales .enlaces-redes .boton-redes-github:hover::after,
+footer .inner-footer .redes-sociales .enlaces-redes .boton-redes-linkedin:hover::after {
+  transform: translate(0%, -200%);
+}
+footer .inner-footer .redes-sociales .enlaces-redes .boton-redes-discord:focus,
+footer .inner-footer .redes-sociales .enlaces-redes .boton-redes-github:focus,
+footer .inner-footer .redes-sociales .enlaces-redes .boton-redes-linkedin:focus {
+  outline: none;
+}
+footer .inner-footer .redes-sociales .enlaces-redes .boton-redes-discord:active,
+footer .inner-footer .redes-sociales .enlaces-redes .boton-redes-github:active,
+footer .inner-footer .redes-sociales .enlaces-redes .boton-redes-linkedin:active {
+  scale: 0.95;
+}
+footer .inner-footer .redes-sociales .enlaces-redes .boton-redes-discord::before {
+  content: url("../img/webicons/rrss/discord.png");
+}
+footer .inner-footer .redes-sociales .enlaces-redes .boton-redes-github::before {
+  content: url("../img/webicons/rrss/github.png");
+}
+footer .inner-footer .redes-sociales .enlaces-redes .boton-redes-linkedin::before {
+  content: url("../img/webicons/rrss/linkedin.png");
+}
+footer .inner-footer .reviews-container {
+  max-width: 60vw;
+  grid-area: reviews;
+  margin: 0 auto;
+}
+footer .inner-footer .reviews-container h4 {
+  color: #D72323;
+  font-family: "Teko", sans-serif;
+  font-style: italic;
+  font-size: 2.25em;
+  margin-top: 10px;
+  text-decoration: underline;
+  text-align: center;
+}
+footer .inner-footer .reviews-container .reviews-slider {
+  display: flex;
+  overflow: hidden;
+}
+footer .inner-footer .reviews-container .reviews-slider .reviews-article {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+footer .inner-footer .reviews-container .reviews-slider .reviews-article.active {
+  opacity: 1;
+}
+footer .inner-footer .reviews-container .reviews-slider .reviews-article img {
   width: 50%;
+  border-radius: 50%;
 }
-.medios-pagos article ul li img {
-  width: 7%;
+footer .inner-footer .reviews-container .reviews-slider .reviews-article h5 {
+  color: #0A261F;
+  font-family: "Staatliches", cursive;
+  font-size: 2.5em;
 }
-.medios-pagos article ul li img:nth-child(7), .medios-pagos article ul li img:nth-child(8), .medios-pagos article ul li img:nth-child(9) {
-  width: 12%;
+footer .inner-footer .reviews-container .reviews-slider .reviews-article .fa-star {
+  color: #FFD700;
+  margin-top: 5px;
+  text-shadow: 4px 4px 4px #0A261F;
+}
+footer .inner-footer .reviews-container .reviews-slider .reviews-article p {
+  color: #0A261F;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.25em;
+  margin-top: 10px;
+}
+footer .inner-footer .reviews-container .reviews-dots {
+  display: flex;
+  justify-content: center;
+}
+footer .inner-footer .reviews-container .reviews-dots .dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: #0A261F;
+  margin: 10px 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+footer .inner-footer .reviews-container .reviews-dots .dot.active {
+  background-color: #D72323;
+}
+footer p {
+  color: #0A261F;
+  font-family: "Fjalla One", sans-serif;
+  font-size: 1.25em;
+  font-style: italic;
+  padding: 5px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=main.css.map */
