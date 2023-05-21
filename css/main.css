@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Black+Ops+One&family=Fjalla+One&family=Kanit:ital@1&family=Oswald&family=Overpass&family=Press+Start+2P&family=Special+Elite&family=Staatliches&family=Teko:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Black+Ops+One&family=Fjalla+One&family=Kanit:ital@1&family=Oswald&family=Overpass&family=Press+Start+2P&family=Squada+One&family=Staatliches&family=Teko:wght@500&family=VT323&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -194,12 +194,12 @@
 .juegos-mas-vendidos .carousel-box .carousel-container .slide span::after {
   content: "";
   position: absolute;
-  width: 10px;
-  border: 2px solid #260A13;
-  bottom: 0;
+  width: 494px;
+  height: 58px;
+  border: 3px solid #260A13;
+  bottom: 519px;
   left: 0;
-  height: 10px;
-  z-index: -1;
+  z-index: 1;
 }
 .juegos-mas-vendidos .carousel-box .carousel-container .slide .slider-fifa::before {
   content: "EA SPORTS™ FIFA 23";
@@ -218,6 +218,7 @@
   content: "Hogwarts Legacy";
 }
 .juegos-mas-vendidos .carousel-box .carousel-container .slide img {
+  border: 3px solid #260A13;
   border-radius: 8px;
 }
 .juegos-mas-vendidos .carousel-box .carousel-container .slide button {
@@ -384,9 +385,7 @@
   box-shadow: 0px 1px 0px #51E5A1;
 }
 .catalogo-juegos .filtros {
-  position: relative;
-  top: -2000px;
-  left: 30px;
+  margin-left: 30px;
   width: 25%;
 }
 .catalogo-juegos .filtros .filtros-juegos {
@@ -397,7 +396,7 @@
 }
 .catalogo-juegos .filtros .filtros-juegos h3 {
   font-family: "Black Ops One", cursive;
-  font-size: 2em;
+  font-size: 1.7em;
   color: #FFD700;
   margin-top: 30px;
   margin-bottom: 5px;
@@ -451,13 +450,28 @@
   transform: translateY(-2px);
 }
 .catalogo-juegos .filtros .filtros-juegos .filtro-box .filtro-label .boton-filtro .boton-filtro-inner {
-  font-family: "Staatliches", cursive;
-  font-size: 1.75em;
+  font-family: "VT323", monospace;
+  font-size: 1.7em;
   pointer-events: none;
   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
   transition-duration: 300ms;
   transition-property: transform;
   transform: translateY(0px);
+  text-transform: uppercase;
+}
+.catalogo-juegos .filtros .filtros-juegos .filtro-box .filtro-label .ver-todos {
+  background-color: #2323D7;
+  color: #A1E5F5;
+  height: 60px;
+  min-width: 410px;
+}
+.catalogo-juegos .filtros .filtros-juegos .filtro-box .filtro-label .ver-todos:hover {
+  background-color: #260A13;
+  color: #A1E5F5;
+}
+.catalogo-juegos .filtros .filtros-juegos .filtro-box .filtro-label .ver-todos .ver-todos-inner {
+  font-family: "Squada One", cursive;
+  font-size: 2.8em;
 }
 
 footer {

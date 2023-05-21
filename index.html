@@ -31,33 +31,6 @@
                 <button class="iconos-header-texto">Registrarse</button>
             </div>
         </div>
-        <!-- <nav class="bottom-header">
-            <div class="dropdown">
-                <button class="boton-drop">Juegos por Genero <i class="fa-solid fa-circle-chevron-down fa-sm"></i></button>
-                <div class="boton-drop-items">
-                    <a href="#">ACCION</a>
-                    <a href="#">DEPORTES</a>
-                    <a href="#">ESTRATEGIA</a>
-                    <a href="#">AVENTURAS</a>
-                    <a href="#">ROL</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <button class="boton-drop">Juegos por Tipo <i class="fa-solid fa-circle-chevron-down fa-sm"></i></button>
-                <div class="boton-drop-items">
-                    <a href="#">FPS</a>
-                    <a href="#">HACK & SLASH</a>
-                    <a href="#">SIMULADOR DEPORTIVO</a>
-                    <a href="#">CARRERAS</a>
-                    <a href="#">CIUDADES Y ASENTAMIENTOS</a>
-                    <a href="#">ESTRATEGIA EN TIEMPO REAL</a>
-                    <a href="#">SOULS LIKE</a>
-                    <a href="#">SUPERVIVENCIA</a>
-                    <a href="#">MUNDO ABIERTO</a>
-                    <a href="#">ESTILO JAPONES</a>
-                </div>
-            </div>
-        </nav> -->
     </header>
 
     <!-- ********** CUERPO DE PAGINA ********** -->
@@ -104,20 +77,11 @@
         <section class="catalogo-juegos">
             <aside class="filtros">
                 <div class="filtros-juegos">
-                    <h3><i class="fa-solid fa-play fa-sm"></i> OFERTAS <i class="fa-solid fa-play fa-rotate-180 fa-sm"></i></h3>
                     <div class="filtro-box">
-                        <input type="checkbox" id="filtro-offdia" class="filtro-input">
-                        <label for="filtro-offdia" class="filtro-label">
-                            <div class="boton-filtro">
-                                <div class="boton-filtro-inner"><i class="fa-solid fa-bolt fa-sm"></i> Ofertas del dia <i class="fa-solid fa-bolt fa-sm"></i></div>
-                            </div>
-                        </label>
-                    </div>
-                    <div class="filtro-box">
-                        <input type="checkbox" id="filtro-offsem" class="filtro-input">
-                        <label for="filtro-offsem" class="filtro-label">
-                            <div class="boton-filtro">
-                                <div class="boton-filtro-inner"><i class="fa-solid fa-tags fa-sm"></i> Ofertas semanales <i class="fa-solid fa-tags fa-sm"></i></div>
+                        <input type="checkbox" id="todos" class="filtro-input">
+                        <label for="todos" class="filtro-label">
+                            <div class="boton-filtro ver-todos">
+                                <div class="boton-filtro-inner ver-todos-inner">VER TODOS LOS JUEGOS</div>
                             </div>
                         </label>
                     </div>
@@ -125,40 +89,40 @@
                 <div class="filtros-juegos">
                     <h3><i class="fa-solid fa-play fa-sm"></i> FILTRAR POR GENERO <i class="fa-solid fa-play fa-rotate-180 fa-sm"></i></h3>
                     <div class="filtro-box">
-                        <input type="checkbox" id="filtro-accion" class="filtro-input">
-                        <label for="filtro-accion" class="filtro-label">
+                        <input type="checkbox" id="accion" class="filtro-input">
+                        <label for="accion" class="filtro-label">
                             <div class="boton-filtro">
                                 <div class="boton-filtro-inner">Accion</div>
                             </div>
                         </label>
                     </div>
                     <div class="filtro-box">
-                        <input type="checkbox" id="filtro-deportes" class="filtro-input">
-                        <label for="filtro-deportes" class="filtro-label">
+                        <input type="checkbox" id="deportes" class="filtro-input">
+                        <label for="deportes" class="filtro-label">
                             <div class="boton-filtro">
                                 <div class="boton-filtro-inner">Deportes</div>
                             </div>
                         </label>
                     </div>
                     <div class="filtro-box">
-                        <input type="checkbox" id="filtro-estrategia" class="filtro-input">
-                        <label for="filtro-estrategia" class="filtro-label">
+                        <input type="checkbox" id="estrategia" class="filtro-input">
+                        <label for="estrategia" class="filtro-label">
                             <div class="boton-filtro">
                                 <div class="boton-filtro-inner">Estrategia</div>
                             </div>
                         </label>
                     </div>
                     <div class="filtro-box">
-                        <input type="checkbox" id="filtro-aventuras" class="filtro-input">
-                        <label for="filtro-aventuras" class="filtro-label">
+                        <input type="checkbox" id="aventuras" class="filtro-input">
+                        <label for="aventuras" class="filtro-label">
                             <div class="boton-filtro">
                                 <div class="boton-filtro-inner">Aventuras</div>
                             </div>
                         </label>
                     </div>
                     <div class="filtro-box">
-                        <input type="checkbox" id="filtro-rol" class="filtro-input">
-                        <label for="filtro-rol" class="filtro-label">
+                        <input type="checkbox" id="rol" class="filtro-input">
+                        <label for="rol" class="filtro-label">
                             <div class="boton-filtro">
                                 <div class="boton-filtro-inner">Rol</div>
                             </div>
@@ -168,80 +132,80 @@
                 <div class="filtros-juegos">
                     <h3><i class="fa-solid fa-play fa-sm"></i> FILTRAR POR TIPO <i class="fa-solid fa-play fa-rotate-180 fa-sm"></i></h3>
                     <div class="filtro-box">
-                        <input type="checkbox" id="filtro-fps" class="filtro-input">
-                        <label for="filtro-fps" class="filtro-label">
+                        <input type="checkbox" id="fps" class="filtro-input">
+                        <label for="fps" class="filtro-label">
                             <div class="boton-filtro">
                                 <div class="boton-filtro-inner">First Person Shooter (FPS)</div>
                             </div>
                         </label>
                     </div>
                     <div class="filtro-box">
-                        <input type="checkbox" id="filtro-has" class="filtro-input">
-                        <label for="filtro-has" class="filtro-label">
+                        <input type="checkbox" id="has" class="filtro-input">
+                        <label for="has" class="filtro-label">
                             <div class="boton-filtro">
                                 <div class="boton-filtro-inner">Hack & Slash</div>
                             </div>
                         </label>
                     </div>
                     <div class="filtro-box">
-                        <input type="checkbox" id="filtro-simdep" class="filtro-input">
-                        <label for="filtro-simdep" class="filtro-label">
+                        <input type="checkbox" id="simdep" class="filtro-input">
+                        <label for="simdep" class="filtro-label">
                             <div class="boton-filtro">
                                 <div class="boton-filtro-inner">Simulador Deportivo</div>
                             </div>
                         </label>
                     </div>
                     <div class="filtro-box">
-                        <input type="checkbox" id="filtro-carre" class="filtro-input">
-                        <label for="filtro-carre" class="filtro-label">
+                        <input type="checkbox" id="carreras" class="filtro-input">
+                        <label for="carreras" class="filtro-label">
                             <div class="boton-filtro">
                                 <div class="boton-filtro-inner">Carreras</div>
                             </div>
                         </label>
                     </div>
                     <div class="filtro-box">
-                        <input type="checkbox" id="filtro-city" class="filtro-input">
-                        <label for="filtro-city" class="filtro-label">
+                        <input type="checkbox" id="city" class="filtro-input">
+                        <label for="city" class="filtro-label">
                             <div class="boton-filtro">
                                 <div class="boton-filtro-inner">Ciudades y Asentamientos</div>
                             </div>
                         </label>
                     </div>
                     <div class="filtro-box">
-                        <input type="checkbox" id="filtro-etr" class="filtro-input">
-                        <label for="filtro-etr" class="filtro-label">
+                        <input type="checkbox" id="etr" class="filtro-input">
+                        <label for="etr" class="filtro-label">
                             <div class="boton-filtro">
                                 <div class="boton-filtro-inner">Estrategia en Tiempo Real (ETR)</div>
                             </div>
                         </label>
                     </div>
                     <div class="filtro-box">
-                        <input type="checkbox" id="filtro-souls" class="filtro-input">
-                        <label for="filtro-souls" class="filtro-label">
+                        <input type="checkbox" id="souls" class="filtro-input">
+                        <label for="souls" class="filtro-label">
                             <div class="boton-filtro">
                                 <div class="boton-filtro-inner">Souls Like</div>
                             </div>
                         </label>
                     </div>
                     <div class="filtro-box">
-                        <input type="checkbox" id="filtro-superv" class="filtro-input">
-                        <label for="filtro-superv" class="filtro-label">
+                        <input type="checkbox" id="supervivencia" class="filtro-input">
+                        <label for="supervivencia" class="filtro-label">
                             <div class="boton-filtro">
                                 <div class="boton-filtro-inner">Supervivencia</div>
                             </div>
                         </label>
                     </div>
                     <div class="filtro-box">
-                        <input type="checkbox" id="filtro-openw" class="filtro-input">
-                        <label for="filtro-openw" class="filtro-label">
+                        <input type="checkbox" id="openworld" class="filtro-input">
+                        <label for="openworld" class="filtro-label">
                             <div class="boton-filtro">
                                 <div class="boton-filtro-inner">Mundo Abierto</div>
                             </div>
                         </label>
                     </div>
                     <div class="filtro-box">
-                        <input type="checkbox" id="filtro-jap" class="filtro-input">
-                        <label for="filtro-jap" class="filtro-label">
+                        <input type="checkbox" id="japones" class="filtro-input">
+                        <label for="japones" class="filtro-label">
                             <div class="boton-filtro">
                                 <div class="boton-filtro-inner">Estilo Japones</div>
                             </div>
@@ -251,24 +215,24 @@
                 <div class="filtros-juegos">
                     <h3><i class="fa-solid fa-play fa-sm"></i> FILTRAR POR PRECIO <i class="fa-solid fa-play fa-rotate-180 fa-sm"></i></h3>
                     <div class="filtro-box">
-                        <input type="checkbox" id="filtro-cinco" class="filtro-input">
-                        <label for="filtro-cinco" class="filtro-label">
+                        <input type="checkbox" id="5000" class="filtro-input">
+                        <label for="5000" class="filtro-label">
                             <div class="boton-filtro">
                                 <div class="boton-filtro-inner">Hasta ARS$ 5.000</div>
                             </div>
                         </label>
                     </div>
                     <div class="filtro-box">
-                        <input type="checkbox" id="filtro-diez" class="filtro-input">
-                        <label for="filtro-diez" class="filtro-label">
+                        <input type="checkbox" id="10000" class="filtro-input">
+                        <label for="10000" class="filtro-label">
                             <div class="boton-filtro">
                                 <div class="boton-filtro-inner">De ARS$ 5.000 a ARS$ 10.000</div>
                             </div>
                         </label>
                     </div>
                     <div class="filtro-box">
-                        <input type="checkbox" id="filtro-masdiez" class="filtro-input">
-                        <label for="filtro-masdiez" class="filtro-label">
+                        <input type="checkbox" id="10001" class="filtro-input">
+                        <label for="10001" class="filtro-label">
                             <div class="boton-filtro">
                                 <div class="boton-filtro-inner">Más de ARS$ 10.000</div>
                             </div>

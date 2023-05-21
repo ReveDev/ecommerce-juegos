@@ -62,12 +62,12 @@
                     &::after {
                         content: '';
                         position: absolute;
-                        width: 10px;
-                        border: 2px solid variables.$subDark;
-                        bottom: 0;
+                        width: 494px;
+                        height: 58px;
+                        border: 3px solid variables.$subDark;
+                        bottom: 519px;
                         left: 0;
-                        height: 10px;
-                        z-index: -1;
+                        z-index: 1;
                     }
                 }
 
@@ -103,6 +103,7 @@
                 }
 
                 img {
+                    border: 3px solid variables.$subDark;
                     border-radius: 8px;
                 }
 
@@ -290,9 +291,7 @@
     }
 
     .filtros {
-        position: relative;
-        top: -2000px;
-        left: 30px;
+        margin-left: 30px;
         width: 25%;
 
         .filtros-juegos {
@@ -303,7 +302,7 @@
 
             h3 {
                 font-family: variables.$fontBlack;
-                font-size: 2em;
+                font-size: 1.7em;
                 color: variables.$mainGold;
                 margin-top: 30px;
                 margin-bottom: 5px;
@@ -365,13 +364,31 @@
                         }
         
                         .boton-filtro-inner {
-                            font-family: variables.$fontStaat;
-                            font-size: 1.75em;
+                            font-family: variables.$fontVT;
+                            font-size: 1.7em;
                             pointer-events: none;
                             transition-timing-function: cubic-bezier(0.25,0.8,0.25,1);
                             transition-duration: 300ms;
                             transition-property: transform;
                             transform: translateY(0px);
+                            text-transform: uppercase;
+                        }
+                    }
+
+                    .ver-todos {
+                        background-color: variables.$mainBlue;
+                        color: variables.$mainLight;
+                        height: 60px;
+                        min-width: 410px;
+
+                        &:hover {
+                            background-color: variables.$subDark;
+                            color: variables.$mainLight;
+                        }
+
+                        .ver-todos-inner {
+                            font-family: variables.$fontSquada;
+                            font-size: 2.8em;
                         }
                     }
                 }
