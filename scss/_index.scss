@@ -1,5 +1,9 @@
 @use 'variables';
 
+body {
+    padding-top: 95px;
+}
+
 .juegos-mas-vendidos {
     background-color: variables.$subGreen;
 
@@ -26,7 +30,6 @@
             margin: auto;
 
             .slide {
-                display: none;
                 animation-name: fade;
                 animation-duration: 1.5s;
                 padding-top: 10px;
@@ -109,7 +112,7 @@
 
                 button {
                     position: absolute;
-                    bottom: 50px;
+                    bottom: 60px;
                     right: 100px;
                     width: 180px;
                     height: 55px;
@@ -133,6 +136,14 @@
                         padding-bottom: 1px;
                     }
                 }
+            }
+
+            .ocultar-slide {
+                display: none;
+            }
+
+            .mostrar-slide {
+                display: block;
             }
 
             @keyframes fade {
@@ -176,119 +187,6 @@
     justify-content: center;
     align-items: center;
     padding: 40px 10px;
-
-    .juegos-container {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 30px;
-        width: 80%;
-
-        .juego {
-            background-color: variables.$subDark;
-            border: 2px solid variables.$mainLight;
-            border-radius: 5px;
-            width: 300px;
-            height: 500px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            justify-items: center;
-            align-content: space-between;
-            margin-left: 30px;
-            margin-bottom: 20px;
-            padding: 10px;
-            position: relative;
-            text-align: center;
-    
-            &:hover {
-                box-shadow: 0 2px 30px 0 variables.$mainGreen, 0 2px 30px 0 variables.$subGreen;
-                transform: scale3d(1.1, 1.1, 0.3);
-            }
-
-            img {
-                width: 100%;
-                height: 150px;
-                object-fit: cover;
-                border-radius: 5px;
-                border: 2px solid variables.$mainDark;
-            }
-
-            .info-juego {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: 150px 50px 150px;
-                justify-items: center;
-                align-items: center;
-                grid-template-areas: 
-                    "titulo titulo"
-                    "precio precio"
-                    "fav    cart";
-
-                h2 {
-                    grid-area: titulo;
-                    color: variables.$mainLight;
-                    font-family: variables.$fontBebas;
-                    font-size: 2.5em;
-                    margin-top: 10px;
-                }
-
-                p {
-                    grid-area: precio;
-                    text-align: center;
-                    color: variables.$mainGold;
-                    font-family: variables.$font2P;
-                    font-size: 1.5em;
-                    margin-top: 5px;
-                    margin-bottom: 5px;
-                    text-shadow: 2px 2px 2px variables.$mainDark;
-                }
-
-                .boton-favoritos {
-                    grid-area: fav;
-                    background-color: variables.$mainRed;
-                    border: 2px solid variables.$subGreen;
-                    border-radius: 5px;
-                    color: variables.$mainLight;
-                    cursor: pointer;
-                    font-size: 20px;
-                    text-align: center;
-                    padding: 10px 20px;
-                    margin-top: 20px;
-                    margin-bottom: 10px;
-                    transition: .5s, color .10s;
-                    width: 60%;
-
-                    &:active {
-                        transform: translate(-2px, 0px);
-                        box-shadow: 0px 1px 0px variables.$mainLight;
-                    }
-                }
-
-                .boton-compra {
-                    grid-area: cart;
-                    background-color: variables.$mainBlue;
-                    border: 2px solid variables.$subGreen;
-                    border-radius: 5px;
-                    color: variables.$mainLight;
-                    cursor: pointer;
-                    font-size: 20px;
-                    text-align: center;
-                    padding: 10px 20px;
-                    margin-top: 20px;
-                    margin-bottom: 10px;
-                    transition: .5s, color .10s;
-                    width: 60%;
-
-                    &:active {
-                        transform: translate(2px, 0px);
-                        box-shadow: 0px 1px 0px variables.$mainGreen;
-                    }
-                }
-            }
-        }
-    }
 
     .filtros {
         margin-left: 30px;
@@ -390,6 +288,119 @@
                             font-family: variables.$fontSquada;
                             font-size: 2.8em;
                         }
+                    }
+                }
+            }
+        }
+    }
+
+    .juegos-container {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        width: 80%;
+
+        .juego {
+            background-color: variables.$subDark;
+            border: 2px solid variables.$mainLight;
+            border-radius: 5px;
+            width: 300px;
+            height: 500px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            align-content: space-between;
+            margin-left: 30px;
+            margin-bottom: 20px;
+            padding: 10px;
+            position: relative;
+            text-align: center;
+    
+            &:hover {
+                box-shadow: 0 2px 30px 0 variables.$mainGreen, 0 2px 30px 0 variables.$subGreen;
+                transform: scale3d(1.1, 1.1, 0.3);
+            }
+
+            img {
+                width: 100%;
+                height: 150px;
+                object-fit: cover;
+                border-radius: 5px;
+                border: 2px solid variables.$mainDark;
+            }
+
+            .info-juego {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: 150px 50px 150px;
+                justify-items: center;
+                align-items: center;
+                grid-template-areas: 
+                    "titulo titulo"
+                    "precio precio"
+                    "fav    cart";
+
+                .nombre-juego {
+                    grid-area: titulo;
+                    color: variables.$mainLight;
+                    font-family: variables.$fontBebas;
+                    font-size: 2.5em;
+                    margin-top: 10px;
+                }
+
+                p {
+                    grid-area: precio;
+                    text-align: center;
+                    color: variables.$mainGold;
+                    font-family: variables.$font2P;
+                    font-size: 1.5em;
+                    margin-top: 5px;
+                    margin-bottom: 5px;
+                    text-shadow: 2px 2px 2px variables.$mainDark;
+                }
+
+                .boton-favoritos {
+                    grid-area: fav;
+                    background-color: variables.$mainRed;
+                    border: 2px solid variables.$subGreen;
+                    border-radius: 5px;
+                    color: variables.$mainLight;
+                    cursor: pointer;
+                    font-size: 20px;
+                    text-align: center;
+                    padding: 10px 20px;
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+                    transition: .5s, color .10s;
+                    width: 60%;
+
+                    &:active {
+                        transform: translate(-2px, 0px);
+                        box-shadow: 0px 1px 0px variables.$mainLight;
+                    }
+                }
+
+                .boton-compra {
+                    grid-area: cart;
+                    background-color: variables.$mainBlue;
+                    border: 2px solid variables.$subGreen;
+                    border-radius: 5px;
+                    color: variables.$mainLight;
+                    cursor: pointer;
+                    font-size: 20px;
+                    text-align: center;
+                    padding: 10px 20px;
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+                    transition: .5s, color .10s;
+                    width: 60%;
+
+                    &:active {
+                        transform: translate(2px, 0px);
+                        box-shadow: 0px 1px 0px variables.$mainGreen;
                     }
                 }
             }

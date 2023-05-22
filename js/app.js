@@ -1,7 +1,7 @@
 const juegos = [
     {
         id: 0,
-        nombre: "Call of Duty® Modern Warfare® 2",
+        nombre: "CALL OF DUTY® MODERN WARFARE® 2",
         portada: "./img/webimages/games/codmw2.webp",
         genero: "accion",
         tipo: "fps",
@@ -9,7 +9,7 @@ const juegos = [
     },
     {
         id: 1,
-        nombre: "Tom Clancy's Rainbow Six® Siege",
+        nombre: "TOM CLANCY'S RAINBOW SIX® SIEGE",
         portada: "./img/webimages/games/tcrss.webp",
         genero: "accion",
         tipo: "fps",
@@ -17,7 +17,7 @@ const juegos = [
     },
     {
         id: 2,
-        nombre: "Halo: The Master Chief Collection",
+        nombre: "HALO: THE MASTER CHIEF COLLECTION",
         portada: "./img/webimages/games/htmcc.webp",
         genero: "accion",
         tipo: "fps",
@@ -25,7 +25,7 @@ const juegos = [
     },
     {
         id: 3,
-        nombre: "Devil May Cry 5",
+        nombre: "DEVIL MAY CRY 5",
         portada: "./img/webimages/games/dmc5.webp",
         genero: "accion",
         tipo: "has",
@@ -33,7 +33,7 @@ const juegos = [
     },
     {
         id: 4,
-        nombre: "God of War",
+        nombre: "GOD OF WAR",
         portada: "./img/webimages/games/gow.webp",
         genero: "accion",
         tipo: "has",
@@ -41,7 +41,7 @@ const juegos = [
     },
     {
         id: 5,
-        nombre: "Hades",
+        nombre: "HADES",
         portada: "./img/webimages/games/hades.webp",
         genero: "accion",
         tipo: "has",
@@ -73,7 +73,7 @@ const juegos = [
     },
     {
         id: 9,
-        nombre: "Forza Horizon 5",
+        nombre: "FORZA HORIZON 5",
         portada: "./img/webimages/games/fh5.webp",
         genero: "deportes",
         tipo: "carreras",
@@ -81,7 +81,7 @@ const juegos = [
     },
     {
         id: 10,
-        nombre: "BeamNG.drive",
+        nombre: "BEAMNG.DRIVE",
         portada: "./img/webimages/games/bngd.webp",
         genero: "deportes",
         tipo: "carreras",
@@ -89,7 +89,7 @@ const juegos = [
     },
     {
         id: 11,
-        nombre: "Assetto Corsa Competizione",
+        nombre: "ASSETTO CORSA COMPETIZIONE",
         portada: "./img/webimages/games/acc.webp",
         genero: "deportes",
         tipo: "carreras",
@@ -97,7 +97,7 @@ const juegos = [
     },
     {
         id: 12,
-        nombre: "Cult of the Lamb",
+        nombre: "CULT OF THE LAMB",
         portada: "./img/webimages/games/cotl.webp",
         genero: "estrategia",
         tipo: "city",
@@ -105,7 +105,7 @@ const juegos = [
     },
     {
         id: 13,
-        nombre: "RimWorld",
+        nombre: "RIMWORLD",
         portada: "./img/webimages/games/rw.webp",
         genero: "estrategia",
         tipo: "city",
@@ -113,7 +113,7 @@ const juegos = [
     },
     {
         id: 14,
-        nombre: "Cities: Skylines",
+        nombre: "CITIES: SKYLINES",
         portada: "./img/webimages/games/cs.webp",
         genero: "estrategia",
         tipo: "city",
@@ -121,7 +121,7 @@ const juegos = [
     },
     {
         id: 15,
-        nombre: "Crusader Kings III",
+        nombre: "CRUSADERS KINGS III",
         portada: "./img/webimages/games/ck3.webp",
         genero: "estrategia",
         tipo: "etr",
@@ -129,7 +129,7 @@ const juegos = [
     },
     {
         id: 16,
-        nombre: "Age of Empires II: Definitive Edition",
+        nombre: "AGE OF EMPIRE II: DEFINITIVE EDITION",
         portada: "./img/webimages/games/aoe2de.webp",
         genero: "estrategia",
         tipo: "etr",
@@ -137,7 +137,7 @@ const juegos = [
     },
     {
         id: 17,
-        nombre: "Total War: WARHAMMER III",
+        nombre: "TOTAL WAR: WARHAMMER III",
         portada: "./img/webimages/games/tww3.webp",
         genero: "estrategia",
         tipo: "etr",
@@ -145,7 +145,7 @@ const juegos = [
     },
     {
         id: 18,
-        nombre: "STAR WARS Jedi: Survivor™",
+        nombre: "STAR WARS JEDI: SURVIVOR™",
         portada: "./img/webimages/games/swjs.webp",
         genero: "aventuras",
         tipo: "souls",
@@ -153,7 +153,7 @@ const juegos = [
     },
     {
         id: 19,
-        nombre: "Elden Ring",
+        nombre: "ELDEN RING",
         portada: "./img/webimages/games/er.webp",
         genero: "aventuras",
         tipo: "souls",
@@ -161,7 +161,7 @@ const juegos = [
     },
     {
         id: 20,
-        nombre: "Sekiro™: Shadows Die Twice",
+        nombre: "SEKIRO™: SHADOWS DIE TWICE",
         portada: "./img/webimages/games/ssdwgoty.webp",
         genero: "aventuras",
         tipo: "souls",
@@ -169,7 +169,7 @@ const juegos = [
     },
     {
         id: 21,
-        nombre: "Rust",
+        nombre: "RUST",
         portada: "./img/webimages/games/rust.webp",
         genero: "aventuras",
         tipo: "supervivencia",
@@ -177,7 +177,7 @@ const juegos = [
     },
     {
         id: 22,
-        nombre: "Subnautica",
+        nombre: "SUBNAUTICA",
         portada: "./img/webimages/games/sn.webp",
         genero: "aventuras",
         tipo: "supervivencia",
@@ -185,7 +185,7 @@ const juegos = [
     },
     {
         id: 23,
-        nombre: "Resident Evil 4",
+        nombre: "RESIDENT EVIL 4",
         portada: "./img/webimages/games/re4r.webp",
         genero: "aventuras",
         tipo: "supervivencia",
@@ -193,7 +193,7 @@ const juegos = [
     },
     {
         id: 24,
-        nombre: "Hogwarts Legacy",
+        nombre: "HOGWARTS LEGACY",
         portada: "./img/webimages/games/hl.webp",
         genero: "rol",
         tipo: "openworld",
@@ -201,7 +201,7 @@ const juegos = [
     },
     {
         id: 25,
-        nombre: "Monster Hunter: World",
+        nombre: "MONSTER HUNTER: WORLD",
         portada: "./img/webimages/games/mhw.webp",
         genero: "rol",
         tipo: "openworld",
@@ -209,7 +209,7 @@ const juegos = [
     },
     {
         id: 26,
-        nombre: "New World",
+        nombre: "NEW WORLD",
         portada: "./img/webimages/games/nw.webp",
         genero: "rol",
         tipo: "openworld",
@@ -225,7 +225,7 @@ const juegos = [
     },
     {
         id: 28,
-        nombre: "Persona 5 Royal",
+        nombre: "PERSONA 5 ROYAL",
         portada: "./img/webimages/games/p5r.webp",
         genero: "rol",
         tipo: "japones",
@@ -242,15 +242,88 @@ const juegos = [
 ];
 
 //VARIABLES
-const juegosContainer = document.querySelector('.juegos-container');
-const botonesFiltros = document.querySelectorAll('.filtro-input');
+const buscadorTexto = document.querySelector('.buscar-texto');
+const buscadorResultado = document.querySelector('.result-box');
 const carouselSlide = document.querySelectorAll('.slide');
 const controlCarousel = document.querySelectorAll('.control-carousel');
+const juegosContainer = document.querySelector('.juegos-container');
+const botonesFiltros = document.querySelectorAll('.filtro-input');
 const reviewSlides = document.querySelectorAll('.reviews-article');
 const dots = document.querySelectorAll('.dot');
 let carouselIndex = 0;
 let actualSlide = 0;
 let carroCompras = [];
+
+// BUSCADOR DE JUEGOS
+function buscadorJuegos(buscar) {
+    buscadorResultado.innerHTML = "";
+    const buscarJuegos = juegos.filter(juego => 
+        juego.nombre.includes(buscar.toUpperCase())
+    );
+
+    buscarJuegos.forEach((resultado) => {
+        const cardResultado = document.createElement("div");
+        cardResultado.classList.add("result-box-inner");
+        cardResultado.innerHTML = `
+        <button class="result-boton">
+            <img src="${resultado.portada}" alt="${resultado.nombre}" class="result-img">
+            <h6 class="result-titulo">${resultado.nombre}</h6>
+        </button> `
+
+        buscadorResultado.append(cardResultado);
+    });
+}
+
+buscadorTexto.addEventListener('input', (e) => {
+    const ingresarTexto = e.currentTarget.value;
+
+    if(ingresarTexto !== "") {
+        buscadorJuegos(ingresarTexto);
+    } else {
+        buscadorResultado.innerHTML = "";
+    }
+});
+
+//LOS MAS VENDIDOS CAROUSEL CONTROL
+function actualCarousel(n) {
+  mostrarSlide(carouselIndex = n);
+}
+
+function mostrarSlide(n) {
+  let i;
+
+  if(n < 1) {
+    carouselIndex = carouselSlide.length;
+  }
+
+  for(i = 0; i < carouselSlide.length; i++) {
+    carouselSlide[i].style.display = "none";
+  }
+  carouselIndex++;
+  
+
+  if(carouselIndex > carouselSlide.length) {
+    carouselIndex = 1;
+  }
+  carouselSlide[carouselIndex-1].style.display = "block"
+
+
+  for(i = 0; i < controlCarousel.length; i++) {
+    controlCarousel[i].className = controlCarousel[i].className.replace(" active", "");
+  }
+  controlCarousel[carouselIndex-1].className += " active";
+}
+mostrarSlide(carouselIndex);
+
+controlCarousel.forEach((lines, index) => {
+  lines.addEventListener('click', () => {
+    actualCarousel(index);
+  });
+});
+
+setInterval(() => {
+  mostrarSlide();
+}, 5000);
 
 // CARGA DE JUEGOS AL HTML
 function ingresarJuegos(allGames) {
@@ -258,18 +331,18 @@ function ingresarJuegos(allGames) {
     juegos.sort((a, b) => (a.nombre > b.nombre) ? 1 : -1);
 
     allGames.forEach(juego => {
-        const div = document.createElement("div");
-        div.classList.add("juego");
-        div.innerHTML = `
+        const cardJuegos = document.createElement("div");
+        cardJuegos.classList.add("juego");
+        cardJuegos.innerHTML = `
         <img src="${juego.portada}" alt="${juego.nombre}">
         <div class="info-juego">
-            <h2>${juego.nombre}</h2>
+            <h2 class="nombre-juego">${juego.nombre}</h2>
             <p>ARS$ ${(juego.precio).toLocaleString()}</p>
             <button class="boton-favoritos"><i class="fa-solid fa-heart-circle-plus fa-sm"></i></button>
             <button class="boton-compra"><i class="fa-solid fa-cart-plus fa-sm"></i></button>
         </div> `
 
-        juegosContainer.append(div);
+        juegosContainer.append(cardJuegos);
     });
 }
 ingresarJuegos(juegos);
@@ -307,44 +380,8 @@ botonesFiltros.forEach((boton) => {
     });
 });
 
-//LOS MAS VENDIDOS CAROUSEL CONTROL
-function actualCarousel(n) {
-  mostrarSlide(carouselIndex = n);
-}
+//MODALS CONTROL
 
-function mostrarSlide(n) {
-  let i;
-
-  if(n < 1) {
-    carouselIndex = carouselSlide.length;
-  }
-
-  for(i = 0; i < carouselSlide.length; i++) {
-    carouselSlide[i].style.display = "none";
-  }
-  carouselIndex++;
-
-  if(carouselIndex > carouselSlide.length) {
-    carouselIndex = 1;
-  }
-  carouselSlide[carouselIndex-1].style.display = "block";
-
-  for(i = 0; i < controlCarousel.length; i++) {
-    controlCarousel[i].className = controlCarousel[i].className.replace(" active", "");
-  }
-  controlCarousel[carouselIndex-1].className += " active";
-}
-mostrarSlide(carouselIndex);
-
-controlCarousel.forEach((lines, index) => {
-  lines.addEventListener('click', () => {
-    actualCarousel(index);
-  });
-});
-
-setInterval(() => {
-  mostrarSlide();
-}, 5000);
 
 //REVIEWS SLIDER CONTROL
 function mostrarSlideReviews(n) {
