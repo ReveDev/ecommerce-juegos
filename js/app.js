@@ -244,20 +244,23 @@ const juegos = [
 //VARIABLES
 const buscadorTexto = document.querySelector('.buscar-texto');
 const buscadorResultado = document.querySelector('.result-box');
+const botonCarrito = document.querySelector('.icono-carrito');
+const carritoContainer = document.querySelector('.despliegue-carrito');
 const carouselSlide = document.querySelectorAll('.slide');
 const controlCarousel = document.querySelectorAll('.control-carousel');
 const juegosContainer = document.querySelector('.juegos-container');
 const botonesFiltros = document.querySelectorAll('.filtro-input');
 const reviewSlides = document.querySelectorAll('.reviews-article');
 const dots = document.querySelectorAll('.dot');
+let carritoJuegos = [];
+let botonComprar = document.querySelectorAll('.boton-compra');
 let carouselIndex = 0;
 let actualSlide = 0;
-let carroCompras = [];
 
 // BUSCADOR DE JUEGOS
 function buscadorJuegos(buscar) {
     buscadorResultado.innerHTML = "";
-    const buscarJuegos = juegos.filter(juego => 
+    const buscarJuegos = juegos.filter(juego =>  
         juego.nombre.includes(buscar.toUpperCase())
     );
 
@@ -283,6 +286,26 @@ buscadorTexto.addEventListener('input', (e) => {
         buscadorResultado.innerHTML = "";
     }
 });
+
+//VER CARRITO
+// function mostrarCarrito() {
+//     carritoContainer.innerHTML = "";
+//     carritoJuegos = localStorage.getItem('carrito');
+
+//     carritoJuegos.forEach((juego) => {
+//         const cardJuegoCarrito = document.createElement("div");
+//         cardJuegoCarrito.classList.add("despliegue-carrito-inner");
+//         cardJuegoCarrito.innerHTML = `
+//         <img src="${juego.portada}" alt="${juego.nombre}" class="carrito-img">
+//         <h6 class="carrito-titulo">${juego.nombre}</h6>
+//         <span class="carrito-precio">$ ${juego.precio}</span>`
+//     });
+
+//     carritoContainer.append(cardJuegoCarrito);
+
+//     console.log(carritoJuegos);
+// }
+// botonCarrito.addEventListener('click', mostrarCarrito);
 
 //LOS MAS VENDIDOS CAROUSEL CONTROL
 function actualCarousel(n) {
@@ -337,12 +360,13 @@ function ingresarJuegos(allGames) {
         <img src="${juego.portada}" alt="${juego.nombre}">
         <div class="info-juego">
             <h2 class="nombre-juego">${juego.nombre}</h2>
-            <p>ARS$ ${(juego.precio).toLocaleString()}</p>
+            <p>$ ${(juego.precio).toLocaleString()}</p>
             <button class="boton-favoritos"><i class="fa-solid fa-heart-circle-plus fa-sm"></i></button>
-            <button class="boton-compra"><i class="fa-solid fa-cart-plus fa-sm"></i></button>
+            <button class="boton-compra" data-juego-id="${juego.id}"><i class="fa-solid fa-cart-plus fa-sm"></i></button>
         </div> `
 
         juegosContainer.append(cardJuegos);
+        botonComprarNuevo();
     });
 }
 ingresarJuegos(juegos);
@@ -380,8 +404,37 @@ botonesFiltros.forEach((boton) => {
     });
 });
 
-//MODALS CONTROL
+//AGREGAR JUEGOS AL CARRITO
+function agregarJuegoCarrito(juego) {
+    carritoJuegos = localStorage.getItem('carrito');
 
+    if(!carritoJuegos) {
+        carritoJuegos = [];
+    } else {
+        carritoJuegos = JSON.parse(carritoJuegos);
+    }
+
+    carritoJuegos.push(juego);
+    localStorage.setItem('carrito', JSON.stringify(carritoJuegos));
+
+    console.log(carritoJuegos);
+}
+
+function clickParaAgregarJuegoCarrito(e) {
+    const juegoId = Number(e.currentTarget.dataset.juegoId);
+    const juegoAgregar = juegos.find((juego) => juego.id === juegoId);
+    
+    if(juegoAgregar) {
+        agregarJuegoCarrito(juegoAgregar);
+    }
+}
+
+function botonComprarNuevo() {
+    botonComprar = document.querySelectorAll('.boton-compra');
+    botonComprar.forEach((boton) => {
+        boton.addEventListener('click', clickParaAgregarJuegoCarrito);
+    });
+}
 
 //REVIEWS SLIDER CONTROL
 function mostrarSlideReviews(n) {
