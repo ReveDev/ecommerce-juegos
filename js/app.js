@@ -244,8 +244,11 @@ const juegos = [
 //VARIABLES
 const buscadorTexto = document.querySelector('.buscar-texto');
 const buscadorResultado = document.querySelector('.result-box');
-const botonCarrito = document.querySelector('.icono-carrito');
-const carritoContainer = document.querySelector('.despliegue-carrito');
+const botonAbrirCarrito = document.querySelector('.icono-carrito');
+const modalCarrito = document.querySelector('.modal-carrito-container');
+const carritoInfo = document.querySelector('.carrito-info');
+const bgModals = document.querySelector('.bgmodals');
+const botonCerrarCarrito = document.querySelector('.cerrar-modal');
 const carouselSlide = document.querySelectorAll('.slide');
 const controlCarousel = document.querySelectorAll('.control-carousel');
 const juegosContainer = document.querySelector('.juegos-container');
@@ -287,25 +290,19 @@ buscadorTexto.addEventListener('input', (e) => {
     }
 });
 
-//VER CARRITO
-// function mostrarCarrito() {
-//     carritoContainer.innerHTML = "";
-//     carritoJuegos = localStorage.getItem('carrito');
+//FUNCIONES PARA ABRIR Y CERRAR CARRITO
+const abrirCarrito = function() {
+    modalCarrito.classList.remove("ocultar");
+    bgModals.classList.remove("ocultar");
+}
+botonAbrirCarrito.addEventListener('click', abrirCarrito);
 
-//     carritoJuegos.forEach((juego) => {
-//         const cardJuegoCarrito = document.createElement("div");
-//         cardJuegoCarrito.classList.add("despliegue-carrito-inner");
-//         cardJuegoCarrito.innerHTML = `
-//         <img src="${juego.portada}" alt="${juego.nombre}" class="carrito-img">
-//         <h6 class="carrito-titulo">${juego.nombre}</h6>
-//         <span class="carrito-precio">$ ${juego.precio}</span>`
-//     });
-
-//     carritoContainer.append(cardJuegoCarrito);
-
-//     console.log(carritoJuegos);
-// }
-// botonCarrito.addEventListener('click', mostrarCarrito);
+const cerrarCarrito = function() {
+    modalCarrito.classList.add("ocultar");
+    bgModals.classList.add("ocultar");
+}
+botonCerrarCarrito.addEventListener('click', cerrarCarrito);
+bgModals.addEventListener('click', cerrarCarrito);
 
 //LOS MAS VENDIDOS CAROUSEL CONTROL
 function actualCarousel(n) {
@@ -362,12 +359,13 @@ function ingresarJuegos(allGames) {
             <h2 class="nombre-juego">${juego.nombre}</h2>
             <p>$ ${(juego.precio).toLocaleString()}</p>
             <button class="boton-favoritos"><i class="fa-solid fa-heart-circle-plus fa-sm"></i></button>
-            <button class="boton-compra" data-juego-id="${juego.id}"><i class="fa-solid fa-cart-plus fa-sm"></i></button>
+            <button class="boton-ver-mas">MAS INFO <i class="fa-solid fa-maximize fa-sm"></i></button>
+            <button class="boton-compra" data-juego-id="${juego.id}">AGREGAR AL CARRITO <i class="fa-solid fa-cart-plus fa-sm"></i></button>
         </div> `
 
         juegosContainer.append(cardJuegos);
-        botonComprarNuevo();
     });
+    botonComprarNuevo();
 }
 ingresarJuegos(juegos);
 
@@ -404,35 +402,48 @@ botonesFiltros.forEach((boton) => {
     });
 });
 
-//AGREGAR JUEGOS AL CARRITO
-function agregarJuegoCarrito(juego) {
-    carritoJuegos = localStorage.getItem('carrito');
-
-    if(!carritoJuegos) {
-        carritoJuegos = [];
+//AGREGAR JUEGOS AL CARRITO PARA VER EN EL MODAL
+function agregarJuegoCarrito(juegoId) {
+    const juegoParaAgregar = juegos.find((juego) => juego.id === juegoId);
+    
+    if(carritoJuegos.some((juego) => juego.id === juegoId)) {
+        const juegoNum = carritoJuegos.findIndex((juego) => juego.id === juegoId);
+        carritoJuegos[juegoNum].cantidad++;
     } else {
-        carritoJuegos = JSON.parse(carritoJuegos);
+        juegoParaAgregar.cantidad = 1;
+        carritoJuegos.push(juegoParaAgregar);
     }
-
-    carritoJuegos.push(juego);
-    localStorage.setItem('carrito', JSON.stringify(carritoJuegos));
-
-    console.log(carritoJuegos);
+    actualizarCarrito();
 }
 
-function clickParaAgregarJuegoCarrito(e) {
-    const juegoId = Number(e.currentTarget.dataset.juegoId);
-    const juegoAgregar = juegos.find((juego) => juego.id === juegoId);
-    
-    if(juegoAgregar) {
-        agregarJuegoCarrito(juegoAgregar);
-    }
+function actualizarCarrito() {
+    carritoInfo.innerHTML = "";
+
+    carritoJuegos.forEach(juego => {
+        const juegoCarrito = document.createElement("div");
+        juegoCarrito.classList.add("carrito-productos");
+        juegoCarrito.innerHTML = `
+        <img src="${juego.portada}" alt="${juego.nombre}" class="carrito-img">
+        <p class="carrito-titulo">${juego.nombre}</p>
+        <div class="contador-carrito">
+            <button class="restar-producto"><i class="fa-solid fa-circle-minus fa-lg"></i></button>
+            <span class="cantidad-producto">${juego.cantidad}</span>
+            <button class="sumar-producto"><i class="fa-solid fa-circle-plus fa-lg"></i></button>
+        </div>
+        <span class="carrito-precio">$ ${juego.precio * juego.cantidad}</span>
+        <button class="eliminar-producto"><i class="fa-solid fa-trash-can fa-xs"></i></button> `
+
+        carritoInfo.appendChild(juegoCarrito);
+    });
 }
 
 function botonComprarNuevo() {
     botonComprar = document.querySelectorAll('.boton-compra');
     botonComprar.forEach((boton) => {
-        boton.addEventListener('click', clickParaAgregarJuegoCarrito);
+        boton.addEventListener('click', (e) => {
+            const juegoId = Number(e.currentTarget.getAttribute("data-juego-id"));
+            agregarJuegoCarrito(juegoId);
+        });
     });
 }
 

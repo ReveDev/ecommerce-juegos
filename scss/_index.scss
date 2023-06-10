@@ -2,6 +2,7 @@
 
 body {
     padding-top: 95px;
+    position: relative;
 }
 
 .juegos-mas-vendidos {
@@ -185,7 +186,7 @@ body {
     background-color: variables.$mainDark;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     padding: 40px 10px;
 
     .filtros {
@@ -197,10 +198,11 @@ body {
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            margin-left: 50px;
 
             h3 {
-                font-family: variables.$fontBlack;
-                font-size: 1.7em;
+                font-family: variables.$fontTeko;
+                font-size: 2.1em;
                 color: variables.$mainGold;
                 margin-top: 30px;
                 margin-bottom: 5px;
@@ -263,7 +265,7 @@ body {
         
                         .boton-filtro-inner {
                             font-family: variables.$fontVT;
-                            font-size: 1.7em;
+                            font-size: 1.45em;
                             pointer-events: none;
                             transition-timing-function: cubic-bezier(0.25,0.8,0.25,1);
                             transition-duration: 300ms;
@@ -307,7 +309,7 @@ body {
             border: 2px solid variables.$mainLight;
             border-radius: 5px;
             width: 300px;
-            height: 500px;
+            height: 600px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
@@ -335,13 +337,14 @@ body {
             .info-juego {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: 150px 50px 150px;
+                grid-template-rows: 150px 50px 150px 50px;
                 justify-items: center;
                 align-items: center;
                 grid-template-areas: 
                     "titulo titulo"
                     "precio precio"
-                    "fav    cart";
+                    "fav    vermas"
+                    "cart   cart";
 
                 .nombre-juego {
                     grid-area: titulo;
@@ -375,7 +378,7 @@ body {
                     margin-top: 20px;
                     margin-bottom: 10px;
                     transition: .5s, color .10s;
-                    width: 60%;
+                    width: 50%;
 
                     &:active {
                         transform: translate(-2px, 0px);
@@ -383,27 +386,168 @@ body {
                     }
                 }
 
-                .boton-compra {
-                    grid-area: cart;
+                .boton-ver-mas {
+                    grid-area: vermas;
                     background-color: variables.$mainBlue;
                     border: 2px solid variables.$subGreen;
                     border-radius: 5px;
                     color: variables.$mainLight;
                     cursor: pointer;
-                    font-size: 20px;
+                    font-family: variables.$fontStaat;
+                    font-size: 15px;
                     text-align: center;
                     padding: 10px 20px;
                     margin-top: 20px;
                     margin-bottom: 10px;
+                    margin-right: 40px;
                     transition: .5s, color .10s;
-                    width: 60%;
+                    width: 80%;    
 
                     &:active {
                         transform: translate(2px, 0px);
                         box-shadow: 0px 1px 0px variables.$mainGreen;
                     }
                 }
+
+                .boton-compra {
+                    grid-area: cart;
+                    background-color: variables.$mainGreen;
+                    border: 2px solid variables.$subGreen;
+                    border-radius: 5px;
+                    color: variables.$mainDark;
+                    cursor: pointer;
+                    font-family: variables.$fontBlack;
+                    font-size: 15px;
+                    text-align: center;
+                    padding: 10px 20px;
+                    width: 90%;
+                }
             }
         }
     }
+}
+
+.modal-carrito-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 800px;
+    position: absolute;
+    top: 2%;
+    right: 20%;
+    background-color: variables.$subDark;
+    border: 3px solid variables.$mainGreen;
+    border-radius: 15px;
+    z-index: 2;
+
+    .carrito-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: variables.$mainDark;
+        border-bottom: 2px solid variables.$mainGreen;
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+
+        .titulo-modal {
+            color: variables.$mainLight;
+            font-family: variables.$fontOswald;
+            font-size: 1.8em;
+            padding: 0 0 5px 50px;
+        }
+
+        .cerrar-modal {
+            background-color: transparent;
+            border: none;
+            padding-right: 20px;
+            font-size: 25px;
+            color: variables.$subGreen;
+            cursor: pointer;
+        }
+    }
+
+    .carrito-info {
+        .carrito-productos {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+    
+            .carrito-img {
+                width: 15%;
+                border: 2px solid variables.$subGreen;
+            }
+    
+            .carrito-titulo {
+                color: variables.$subGreen;
+                font-family: variables.$fontSquada;
+                font-size: 1.5em;
+                width: 45%;
+                text-align: center;
+            }
+    
+            .contador-carrito {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                gap: 10px;
+    
+                .restar-producto,
+                .sumar-producto {
+                    background-color: transparent;
+                    border: none;
+                    color: variables.$mainDark;
+                    font-size: 20px;
+                    cursor: pointer;
+    
+                    &:hover {
+                        color: variables.$subGreen;
+                    }
+                }
+        
+                .cantidad-producto {
+                    font-family: variables.$fontStaat;
+                    font-size: 1.75em;
+                    color: variables.$mainLight;
+                }
+            }
+    
+            .carrito-precio {
+                color: variables.$mainGold;
+                font-family: variables.$fontBebas;
+                font-size: 2em;
+                width: 15%;
+                text-align: center;
+            }
+    
+            .eliminar-producto {
+                background-color: transparent;
+                border: none;
+                color: variables.$mainRed;
+                font-size: 50px;
+                cursor: pointer;
+
+                &:active {
+                    color: variables.$mainLight;
+                }
+            }
+        }
+    }
+}
+
+.bgmodals {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: 1;
+}
+
+.ocultar {
+    display: none;
 }

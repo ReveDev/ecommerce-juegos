@@ -44,6 +44,7 @@ header .top-header .buscar-container .buscar-box {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  padding-left: 5px;
   width: 100%;
 }
 header .top-header .buscar-container .buscar-box .buscar-texto {
@@ -52,6 +53,7 @@ header .top-header .buscar-container .buscar-box .buscar-texto {
   font-family: "Staatliches", cursive;
   font-size: 30px;
   outline: none;
+  text-indent: 10px;
 }
 header .top-header .buscar-container .buscar-box .buscar-texto:focus {
   outline: none;
@@ -156,26 +158,12 @@ header .top-header .header-iconos .favoritos-container .icono-favorito:hover {
 header .top-header .header-iconos .favoritos-container .icono-favorito:active {
   color: #D72323;
 }
-header .top-header .header-iconos .favoritos-container .icono-favorito .cantidad-carrito {
-  background-color: #FFD700;
-  color: #260A13;
-  border-radius: 50%;
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Staatliches", cursive;
-  font-size: 0.8em;
-}
 header .top-header .header-iconos .carrito-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 85%;
+  margin-left: 30px;
 }
 header .top-header .header-iconos .carrito-container .icono-carrito {
   background-color: transparent;
@@ -212,42 +200,6 @@ header .top-header .header-iconos .carrito-container .icono-carrito .cantidad-ca
   font-family: "Staatliches", cursive;
   font-size: 0.7em;
 }
-header .top-header .header-iconos .carrito-container .despliegue-carrito .despliegue-carrito-inner {
-  background-color: #A1E5F5;
-  border: 3px solid #260A13;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5px;
-  position: relative;
-  margin-top: 10px;
-  float: left;
-  gap: 10px;
-}
-header .top-header .header-iconos .carrito-container .despliegue-carrito .despliegue-carrito-inner::after {
-  content: "";
-  position: absolute;
-  right: 157px;
-  top: -15px;
-  border-top: none;
-  border-right: 15px solid transparent;
-  border-left: 15px solid transparent;
-  border-bottom: 15px solid #A1E5F5;
-}
-header .top-header .header-iconos .carrito-container .despliegue-carrito .despliegue-carrito-inner .carrito-img {
-  width: 20%;
-  border: 2px solid #260A13;
-}
-header .top-header .header-iconos .carrito-container .despliegue-carrito .despliegue-carrito-inner .carrito-titulo {
-  color: #0A261F;
-  font-family: "Bebas Neue", cursive;
-  font-size: 1em;
-}
-header .top-header .header-iconos .carrito-container .despliegue-carrito .despliegue-carrito-inner .carrito-precio {
-  color: #D72323;
-  font-family: "Teko", sans-serif;
-  font-size: 1.2em;
-}
 header .bottom-header {
   background-color: #260A13;
   display: flex;
@@ -258,6 +210,7 @@ header .bottom-header {
 
 body {
   padding-top: 95px;
+  position: relative;
 }
 
 .juegos-mas-vendidos {
@@ -413,7 +366,7 @@ body {
   background-color: #0A261F;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   padding: 40px 10px;
 }
 .catalogo-juegos .filtros {
@@ -425,10 +378,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-left: 50px;
 }
 .catalogo-juegos .filtros .filtros-juegos h3 {
-  font-family: "Black Ops One", cursive;
-  font-size: 1.7em;
+  font-family: "Teko", sans-serif;
+  font-size: 2.1em;
   color: #FFD700;
   margin-top: 30px;
   margin-bottom: 5px;
@@ -483,7 +437,7 @@ body {
 }
 .catalogo-juegos .filtros .filtros-juegos .filtro-box .filtro-label .boton-filtro .boton-filtro-inner {
   font-family: "VT323", monospace;
-  font-size: 1.7em;
+  font-size: 1.45em;
   pointer-events: none;
   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
   transition-duration: 300ms;
@@ -518,7 +472,7 @@ body {
   border: 2px solid #A1E5F5;
   border-radius: 5px;
   width: 300px;
-  height: 500px;
+  height: 600px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
@@ -544,10 +498,10 @@ body {
 .catalogo-juegos .juegos-container .juego .info-juego {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 150px 50px 150px;
+  grid-template-rows: 150px 50px 150px 50px;
   justify-items: center;
   align-items: center;
-  grid-template-areas: "titulo titulo" "precio precio" "fav    cart";
+  grid-template-areas: "titulo titulo" "precio precio" "fav    vermas" "cart   cart";
 }
 .catalogo-juegos .juegos-container .juego .info-juego .nombre-juego {
   grid-area: titulo;
@@ -579,30 +533,156 @@ body {
   margin-top: 20px;
   margin-bottom: 10px;
   transition: 0.5s, color 0.1s;
-  width: 60%;
+  width: 50%;
 }
 .catalogo-juegos .juegos-container .juego .info-juego .boton-favoritos:active {
   transform: translate(-2px, 0px);
   box-shadow: 0px 1px 0px #A1E5F5;
 }
-.catalogo-juegos .juegos-container .juego .info-juego .boton-compra {
-  grid-area: cart;
+.catalogo-juegos .juegos-container .juego .info-juego .boton-ver-mas {
+  grid-area: vermas;
   background-color: #2323D7;
   border: 2px solid #17E7B7;
   border-radius: 5px;
   color: #A1E5F5;
   cursor: pointer;
-  font-size: 20px;
+  font-family: "Staatliches", cursive;
+  font-size: 15px;
   text-align: center;
   padding: 10px 20px;
   margin-top: 20px;
   margin-bottom: 10px;
+  margin-right: 40px;
   transition: 0.5s, color 0.1s;
-  width: 60%;
+  width: 80%;
 }
-.catalogo-juegos .juegos-container .juego .info-juego .boton-compra:active {
+.catalogo-juegos .juegos-container .juego .info-juego .boton-ver-mas:active {
   transform: translate(2px, 0px);
   box-shadow: 0px 1px 0px #51E5A1;
+}
+.catalogo-juegos .juegos-container .juego .info-juego .boton-compra {
+  grid-area: cart;
+  background-color: #51E5A1;
+  border: 2px solid #17E7B7;
+  border-radius: 5px;
+  color: #0A261F;
+  cursor: pointer;
+  font-family: "Black Ops One", cursive;
+  font-size: 15px;
+  text-align: center;
+  padding: 10px 20px;
+  width: 90%;
+}
+
+.modal-carrito-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 800px;
+  position: absolute;
+  top: 2%;
+  right: 20%;
+  background-color: #260A13;
+  border: 3px solid #51E5A1;
+  border-radius: 15px;
+  z-index: 2;
+}
+.modal-carrito-container .carrito-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0A261F;
+  border-bottom: 2px solid #51E5A1;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+.modal-carrito-container .carrito-header .titulo-modal {
+  color: #A1E5F5;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.8em;
+  padding: 0 0 5px 50px;
+}
+.modal-carrito-container .carrito-header .cerrar-modal {
+  background-color: transparent;
+  border: none;
+  padding-right: 20px;
+  font-size: 25px;
+  color: #17E7B7;
+  cursor: pointer;
+}
+.modal-carrito-container .carrito-info .carrito-productos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+.modal-carrito-container .carrito-info .carrito-productos .carrito-img {
+  width: 15%;
+  border: 2px solid #17E7B7;
+}
+.modal-carrito-container .carrito-info .carrito-productos .carrito-titulo {
+  color: #17E7B7;
+  font-family: "Squada One", cursive;
+  font-size: 1.5em;
+  width: 45%;
+  text-align: center;
+}
+.modal-carrito-container .carrito-info .carrito-productos .contador-carrito {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+}
+.modal-carrito-container .carrito-info .carrito-productos .contador-carrito .restar-producto,
+.modal-carrito-container .carrito-info .carrito-productos .contador-carrito .sumar-producto {
+  background-color: transparent;
+  border: none;
+  color: #0A261F;
+  font-size: 20px;
+  cursor: pointer;
+}
+.modal-carrito-container .carrito-info .carrito-productos .contador-carrito .restar-producto:hover,
+.modal-carrito-container .carrito-info .carrito-productos .contador-carrito .sumar-producto:hover {
+  color: #17E7B7;
+}
+.modal-carrito-container .carrito-info .carrito-productos .contador-carrito .cantidad-producto {
+  font-family: "Staatliches", cursive;
+  font-size: 1.75em;
+  color: #A1E5F5;
+}
+.modal-carrito-container .carrito-info .carrito-productos .carrito-precio {
+  color: #FFD700;
+  font-family: "Bebas Neue", cursive;
+  font-size: 2em;
+  width: 15%;
+  text-align: center;
+}
+.modal-carrito-container .carrito-info .carrito-productos .eliminar-producto {
+  background-color: transparent;
+  border: none;
+  color: #D72323;
+  font-size: 50px;
+  cursor: pointer;
+}
+.modal-carrito-container .carrito-info .carrito-productos .eliminar-producto:active {
+  color: #A1E5F5;
+}
+
+.bgmodals {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  z-index: 1;
+}
+
+.ocultar {
+  display: none;
 }
 
 footer {

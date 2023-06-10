@@ -34,14 +34,12 @@
             <div class="header-iconos">
                 <div class="favoritos-container">
                     <button class="icono-favorito"><i class="fa-solid fa-heart"></i></button>
-                    <div class="despliegue-favoritos"></div>
                 </div>
                 <div class="carrito-container">
                     <button class="icono-carrito">
                         <i class="fa-solid fa-cart-shopping"></i>
                         <span class="cantidad-carrito">0</span>
                     </button>
-                    <div class="despliegue-carrito"></div>
                 </div>
             </div>
         </div>
@@ -103,7 +101,7 @@
                     </div>
                 </div>
                 <div class="filtros-juegos">
-                    <h3><i class="fa-solid fa-play fa-sm"></i> FILTRAR POR GENERO <i class="fa-solid fa-play fa-rotate-180 fa-sm"></i></h3>
+                    <h3><i class="fa-solid fa-play fa-xs"></i> FILTRAR POR GENERO <i class="fa-solid fa-play fa-rotate-180 fa-xs"></i></h3>
                     <div class="filtro-box">
                         <input type="checkbox" id="accion" class="filtro-input">
                         <label for="accion" class="filtro-label">
@@ -146,12 +144,12 @@
                     </div>
                 </div>
                 <div class="filtros-juegos">
-                    <h3><i class="fa-solid fa-play fa-sm"></i> FILTRAR POR TIPO <i class="fa-solid fa-play fa-rotate-180 fa-sm"></i></h3>
+                    <h3><i class="fa-solid fa-play fa-xs"></i> FILTRAR POR TIPO <i class="fa-solid fa-play fa-rotate-180 fa-xs"></i></h3>
                     <div class="filtro-box">
                         <input type="checkbox" id="fps" class="filtro-input">
                         <label for="fps" class="filtro-label">
                             <div class="boton-filtro">
-                                <div class="boton-filtro-inner">First Person Shooter (FPS)</div>
+                                <div class="boton-filtro-inner">First Person Shooter</div>
                             </div>
                         </label>
                     </div>
@@ -191,7 +189,7 @@
                         <input type="checkbox" id="etr" class="filtro-input">
                         <label for="etr" class="filtro-label">
                             <div class="boton-filtro">
-                                <div class="boton-filtro-inner">Estrategia en Tiempo Real (ETR)</div>
+                                <div class="boton-filtro-inner">Estrategia en Tiempo Real</div>
                             </div>
                         </label>
                     </div>
@@ -229,7 +227,7 @@
                     </div>
                 </div>
                 <div class="filtros-juegos">
-                    <h3><i class="fa-solid fa-play fa-sm"></i> FILTRAR POR PRECIO <i class="fa-solid fa-play fa-rotate-180 fa-sm"></i></h3>
+                    <h3><i class="fa-solid fa-play fa-xs"></i> FILTRAR POR PRECIO <i class="fa-solid fa-play fa-rotate-180 fa-xs"></i></h3>
                     <div class="filtro-box">
                         <input type="checkbox" id="5000" class="filtro-input">
                         <label for="5000" class="filtro-label">
@@ -257,7 +255,15 @@
                 </div>
             </aside>
             <article class="juegos-container"></article>
-        </section>        
+        </section>
+        <div class="modal-carrito-container ocultar">
+            <div class="carrito-header">
+                <h2 class="titulo-modal">SU CARRITO DE COMPRAS</h2>
+                <button class="cerrar-modal"><i class="fa-solid fa-circle-xmark fa-lg"></i></button>
+            </div>
+            <div class="carrito-info"></div>
+        </div>
+        <div class="bgmodals ocultar"></div>
     </main>
 
     <!-- ********** PIE DE PAGINA ********** -->
