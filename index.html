@@ -38,7 +38,7 @@
                 <div class="carrito-container">
                     <button class="icono-carrito">
                         <i class="fa-solid fa-cart-shopping"></i>
-                        <span class="cantidad-carrito">0</span>
+                        <span class="cantidad-carrito"></span>
                     </button>
                 </div>
             </div>
@@ -258,10 +258,17 @@
         </section>
         <div class="modal-carrito-container ocultar">
             <div class="carrito-header">
-                <h2 class="titulo-modal">SU CARRITO DE COMPRAS</h2>
+                <h2 class="titulo-modal">CARRITO DE COMPRAS</h2>
                 <button class="cerrar-modal"><i class="fa-solid fa-circle-xmark fa-lg"></i></button>
             </div>
             <div class="carrito-info"></div>
+            <div class="carrito-footer">
+                <button class="vaciar-carrito">Eliminar todos los juegos del carrito</button>
+                <div>
+                    <span class="total-carrito">El total de su carrito es:</span>
+                    <span class="precio-total"></span>
+                </div>
+            </div>
         </div>
         <div class="bgmodals ocultar"></div>
     </main>
@@ -323,6 +330,7 @@
         </section>
         <p>©2023, Brian "Revein" Hoyos, Página sin fines de lucro ni comerciales</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/app.js"></script>
 </body>
 

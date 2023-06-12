@@ -467,7 +467,7 @@ body {
     }
 
     .carrito-info {
-        .carrito-productos {
+        .carrito-juegos {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -486,30 +486,23 @@ body {
                 text-align: center;
             }
     
-            .contador-carrito {
-                display: flex;
-                justify-content: space-evenly;
-                align-items: center;
-                gap: 10px;
+            .restar-cantidad,
+            .sumar-cantidad {
+                background-color: transparent;
+                border: none;
+                color: variables.$mainDark;
+                font-size: 20px;
+                cursor: pointer;
     
-                .restar-producto,
-                .sumar-producto {
-                    background-color: transparent;
-                    border: none;
-                    color: variables.$mainDark;
-                    font-size: 20px;
-                    cursor: pointer;
-    
-                    &:hover {
-                        color: variables.$subGreen;
-                    }
+                &:hover {
+                    color: variables.$subGreen;
                 }
+            }
         
-                .cantidad-producto {
-                    font-family: variables.$fontStaat;
-                    font-size: 1.75em;
-                    color: variables.$mainLight;
-                }
+            .cantidad-juego {
+                font-family: variables.$fontStaat;
+                font-size: 1.75em;
+                color: variables.$mainLight;
             }
     
             .carrito-precio {
@@ -518,9 +511,10 @@ body {
                 font-size: 2em;
                 width: 15%;
                 text-align: center;
+                margin-left: 5px;
             }
     
-            .eliminar-producto {
+            .eliminar-juego {
                 background-color: transparent;
                 border: none;
                 color: variables.$mainRed;
@@ -531,6 +525,57 @@ body {
                     color: variables.$mainLight;
                 }
             }
+        }
+        
+        .carrito-vacio {
+            color: variables.$mainLight;
+            font-family: variables.$fontVT;
+            font-size: 5em;
+            text-align: center;
+            padding: 10px;
+        }
+    }
+
+    .carrito-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: variables.$mainDark;
+        border-top: 2px solid variables.$mainGreen;
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+        padding: 10px;
+
+        .vaciar-carrito {
+            width: 350px;
+            height: 40px;
+            background-color: variables.$mainRed;
+            border: none;
+            border-radius: 50px;
+            color: variables.$mainLight;
+            font-family: variables.$fontStaat;
+            font-size: 1.3em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            cursor: pointer;
+
+            &:active {
+                color: variables.$mainDark;
+                background-color: variables.$mainLight;
+            }
+        }
+
+        .total-carrito,
+        .precio-total {
+            color: variables.$mainGreen;
+            font-family: variables.$fontBebas;
+            font-size: 1.75em;
+        }
+
+        .precio-total {
+            padding-right: 55px;
         }
     }
 }
@@ -550,4 +595,25 @@ body {
 
 .ocultar {
     display: none;
+}
+
+.alerta-juego-agregado {
+    color: variables.$mainDark;
+    font-family: variables.$fontBebas;
+    font-size: 1.6em !important;
+    letter-spacing: .5px;
+}
+
+.alerta-juego-eliminado {
+    color: variables.$mainLight;
+    font-family: variables.$fontBebas;
+    font-size: 1.4em !important;
+    letter-spacing: 2px;
+}
+
+.alerta-carrito-vacio {
+    color: variables.$mainBlue;
+    font-family: variables.$fontBebas;
+    font-size: 1.8em !important;
+    letter-spacing: 2px;
 }

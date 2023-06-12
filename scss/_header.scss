@@ -75,7 +75,7 @@ header {
                         .result-titulo {
                             color: variables.$mainDark;
                             font-family: variables.$fontVT;
-                            font-size: 1.2em;
+                            font-size: 1.15em;
                             padding-left: 10px;
                         }
         
@@ -112,6 +112,7 @@ header {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                cursor: pointer;
     
                 &::after {
                     content: '';

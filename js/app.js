@@ -244,11 +244,14 @@ const juegos = [
 //VARIABLES
 const buscadorTexto = document.querySelector('.buscar-texto');
 const buscadorResultado = document.querySelector('.result-box');
-const botonAbrirCarrito = document.querySelector('.icono-carrito');
 const modalCarrito = document.querySelector('.modal-carrito-container');
-const carritoInfo = document.querySelector('.carrito-info');
+const botonAbrirCarrito = document.querySelector('.icono-carrito');
 const bgModals = document.querySelector('.bgmodals');
 const botonCerrarCarrito = document.querySelector('.cerrar-modal');
+const carritoInfo = document.querySelector('.carrito-info');
+const botonVaciarCarritoEntero = document.querySelector('.vaciar-carrito');
+const precioTotal = document.querySelector('.precio-total');
+const cantidadTotal = document.querySelector('.cantidad-carrito');
 const carouselSlide = document.querySelectorAll('.slide');
 const controlCarousel = document.querySelectorAll('.control-carousel');
 const juegosContainer = document.querySelector('.juegos-container');
@@ -257,6 +260,9 @@ const reviewSlides = document.querySelectorAll('.reviews-article');
 const dots = document.querySelectorAll('.dot');
 let carritoJuegos = [];
 let botonComprar = document.querySelectorAll('.boton-compra');
+let botonRestarCantidad = document.querySelectorAll(".restar-cantidad");
+let botonSumarCantidad = document.querySelectorAll(".sumar-cantidad");
+let botonEliminar = document.querySelectorAll('.eliminar-juego');
 let carouselIndex = 0;
 let actualSlide = 0;
 
@@ -294,6 +300,8 @@ buscadorTexto.addEventListener('input', (e) => {
 const abrirCarrito = function() {
     modalCarrito.classList.remove("ocultar");
     bgModals.classList.remove("ocultar");
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 }
 botonAbrirCarrito.addEventListener('click', abrirCarrito);
 
@@ -365,7 +373,7 @@ function ingresarJuegos(allGames) {
 
         juegosContainer.append(cardJuegos);
     });
-    botonComprarNuevo();
+    botonComprarUpdate();
 }
 ingresarJuegos(juegos);
 
@@ -418,34 +426,171 @@ function agregarJuegoCarrito(juegoId) {
 
 function actualizarCarrito() {
     carritoInfo.innerHTML = "";
-
+    
     carritoJuegos.forEach(juego => {
         const juegoCarrito = document.createElement("div");
-        juegoCarrito.classList.add("carrito-productos");
+        juegoCarrito.classList.add("carrito-juegos");
         juegoCarrito.innerHTML = `
         <img src="${juego.portada}" alt="${juego.nombre}" class="carrito-img">
         <p class="carrito-titulo">${juego.nombre}</p>
-        <div class="contador-carrito">
-            <button class="restar-producto"><i class="fa-solid fa-circle-minus fa-lg"></i></button>
-            <span class="cantidad-producto">${juego.cantidad}</span>
-            <button class="sumar-producto"><i class="fa-solid fa-circle-plus fa-lg"></i></button>
-        </div>
-        <span class="carrito-precio">$ ${juego.precio * juego.cantidad}</span>
-        <button class="eliminar-producto"><i class="fa-solid fa-trash-can fa-xs"></i></button> `
+        <button class="restar-cantidad" data-juego-id="${juego.id}"><i class="fa-solid fa-circle-minus fa-lg"></i></button>
+        <span class="cantidad-juego">${juego.cantidad}</span>
+        <button class="sumar-cantidad" data-juego-id="${juego.id}"><i class="fa-solid fa-circle-plus fa-lg"></i></button>
+        <span class="carrito-precio">$ ${(juego.precio * juego.cantidad).toLocaleString()}</span>
+        <button class="eliminar-juego" data-juego-id="${juego.id}"><i class="fa-solid fa-trash-can fa-xs"></i></button> `
 
         carritoInfo.appendChild(juegoCarrito);
     });
+    precioTotal.innerHTML = `$ ${totalCompra(carritoJuegos).toLocaleString()}`
+    cantidadTotal.innerHTML = carritoJuegos.length;
+    botonesCantidades();
+    botonEliminarUpdate();
+
+    if(carritoJuegos.length === 0) {
+        carritoInfo.innerHTML = `<p class="carrito-vacio">SU CARRITO ESTA VACIO</p>`;
+        precioTotal.innerHTML = "$ 0.00";
+    }
+
+    localStorage.setItem("carrito-juegos", JSON.stringify(carritoJuegos));
 }
 
-function botonComprarNuevo() {
+function botonComprarUpdate() {
     botonComprar = document.querySelectorAll('.boton-compra');
     botonComprar.forEach((boton) => {
         boton.addEventListener('click', (e) => {
             const juegoId = Number(e.currentTarget.getAttribute("data-juego-id"));
             agregarJuegoCarrito(juegoId);
+
+            Swal.fire({
+                icon: 'success',
+                title: 'Juego agregado al carrito exitosamente',
+                toast: true,
+                position: 'top-right',
+                iconColor: '#0A261F',
+                background: '#17E7B7',
+                customClass: {
+                  title: 'alerta-juego-agregado',
+                },
+                showConfirmButton: false,
+                timer: 1500,
+                timerProgressBar: true
+            })
         });
     });
 }
+
+//FUNCIONALIDADES DEL MODAL DEL CARRITO
+function botonesCantidades() {
+    botonRestarCantidad = document.querySelectorAll(".restar-cantidad");
+    botonSumarCantidad = document.querySelectorAll(".sumar-cantidad");
+
+    botonRestarCantidad.forEach((botonResta) => {
+        botonResta.addEventListener('click', clickRestar);
+    });
+
+    botonSumarCantidad.forEach((botonSuma) => {
+        botonSuma.addEventListener('click', clickSumar);
+    });
+}
+
+function clickRestar(e) {
+    const juegoEnCarritoId = Number(e.currentTarget.getAttribute("data-juego-id"));
+    const juegoEnCarritoNum = carritoJuegos.find((juego) => juego.id === juegoEnCarritoId);
+
+    if(juegoEnCarritoNum.cantidad > 1) {
+        juegoEnCarritoNum.cantidad--;
+        actualizarCarrito();
+    }
+
+    localStorage.setItem("carrito-juegos", JSON.stringify(carritoJuegos));
+}
+
+function clickSumar(e) {
+    const juegoEnCarritoId = Number(e.currentTarget.getAttribute("data-juego-id"));
+    const juegoEnCarritoNum = carritoJuegos.find((juego) => juego.id === juegoEnCarritoId);
+    juegoEnCarritoNum.cantidad++;
+    actualizarCarrito();
+
+    localStorage.setItem("carrito-juegos", JSON.stringify(carritoJuegos));
+}
+
+function eliminarJuegoIndividual(e) {
+    const juegoEliminadoId = Number(e.currentTarget.getAttribute("data-juego-id"));
+    const juegoEliminadoNum = carritoJuegos.findIndex((juego) => juego.id === juegoEliminadoId);
+    carritoJuegos.splice(juegoEliminadoNum, 1);
+    actualizarCarrito();
+
+    Swal.fire({
+        icon: 'success',
+        title: 'Juego eliminado del carrito exitosamente',
+        toast: true,
+        position: 'top-right',
+        iconColor: '#A1E5F5',
+        background: '#D72323',
+        customClass: {
+          title: 'alerta-juego-eliminado',
+        },
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true
+    })
+
+    localStorage.setItem("carrito-juegos", JSON.stringify(carritoJuegos));
+}
+
+function botonEliminarUpdate() {
+    botonEliminar = document.querySelectorAll('.eliminar-juego');
+    botonEliminar.forEach((boton) => {
+        boton.addEventListener('click', eliminarJuegoIndividual);
+    });
+}
+
+function eliminarCarritoEntero() {
+    carritoJuegos.length = 0;
+    localStorage.setItem("carrito-juegos", JSON.stringify(carritoJuegos));
+    actualizarCarrito();
+
+    Swal.fire({
+        icon: 'info',
+        title: 'Carrito vaciado exitosamente',
+        toast: true,
+        position: 'top-right',
+        iconColor: '#2323D7',
+        background: '#FFD700',
+        customClass: {
+          title: 'alerta-carrito-vacio',
+        },
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true
+    })
+}
+botonVaciarCarritoEntero.addEventListener('click', eliminarCarritoEntero);
+
+function totalCompra(carrito) {
+    let totalJuegos = 0;
+
+    for(let i = 0; i < carrito.length; i++) {
+        const precioJuego = carrito[i];
+        totalJuegos += precioJuego.precio * precioJuego.cantidad;
+    }
+
+    return totalJuegos;
+}
+
+//CHEQUEANDO SI HAY UN CARRITO EN EL LOCAL STORAGE Y OBTENERLO
+window.addEventListener('load', () => {
+    let carritoJuegosGuardado = localStorage.getItem("carrito-juegos");
+    carritoJuegosGuardado = JSON.parse(carritoJuegosGuardado);
+
+    if(carritoJuegosGuardado) {
+        carritoJuegos = carritoJuegosGuardado;
+        cantidadTotal.innerHTML = carritoJuegos.length;
+    } else {
+        carritoJuegos = [];
+    }
+    actualizarCarrito();
+});
 
 //REVIEWS SLIDER CONTROL
 function mostrarSlideReviews(n) {

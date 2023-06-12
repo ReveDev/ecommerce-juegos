@@ -78,7 +78,7 @@ header .top-header .buscar-container .result-box .result-box-inner .result-boton
 header .top-header .buscar-container .result-box .result-box-inner .result-boton .result-titulo {
   color: #0A261F;
   font-family: "VT323", monospace;
-  font-size: 1.2em;
+  font-size: 1.15em;
   padding-left: 10px;
 }
 header .top-header .buscar-container .result-box .result-box-inner .result-boton:hover {
@@ -107,6 +107,7 @@ header .top-header .header-log-reg .iconos-header-texto {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 header .top-header .header-log-reg .iconos-header-texto::after {
   content: "";
@@ -610,62 +611,102 @@ body {
   color: #17E7B7;
   cursor: pointer;
 }
-.modal-carrito-container .carrito-info .carrito-productos {
+.modal-carrito-container .carrito-info .carrito-juegos {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px;
 }
-.modal-carrito-container .carrito-info .carrito-productos .carrito-img {
+.modal-carrito-container .carrito-info .carrito-juegos .carrito-img {
   width: 15%;
   border: 2px solid #17E7B7;
 }
-.modal-carrito-container .carrito-info .carrito-productos .carrito-titulo {
+.modal-carrito-container .carrito-info .carrito-juegos .carrito-titulo {
   color: #17E7B7;
   font-family: "Squada One", cursive;
   font-size: 1.5em;
   width: 45%;
   text-align: center;
 }
-.modal-carrito-container .carrito-info .carrito-productos .contador-carrito {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 10px;
-}
-.modal-carrito-container .carrito-info .carrito-productos .contador-carrito .restar-producto,
-.modal-carrito-container .carrito-info .carrito-productos .contador-carrito .sumar-producto {
+.modal-carrito-container .carrito-info .carrito-juegos .restar-cantidad,
+.modal-carrito-container .carrito-info .carrito-juegos .sumar-cantidad {
   background-color: transparent;
   border: none;
   color: #0A261F;
   font-size: 20px;
   cursor: pointer;
 }
-.modal-carrito-container .carrito-info .carrito-productos .contador-carrito .restar-producto:hover,
-.modal-carrito-container .carrito-info .carrito-productos .contador-carrito .sumar-producto:hover {
+.modal-carrito-container .carrito-info .carrito-juegos .restar-cantidad:hover,
+.modal-carrito-container .carrito-info .carrito-juegos .sumar-cantidad:hover {
   color: #17E7B7;
 }
-.modal-carrito-container .carrito-info .carrito-productos .contador-carrito .cantidad-producto {
+.modal-carrito-container .carrito-info .carrito-juegos .cantidad-juego {
   font-family: "Staatliches", cursive;
   font-size: 1.75em;
   color: #A1E5F5;
 }
-.modal-carrito-container .carrito-info .carrito-productos .carrito-precio {
+.modal-carrito-container .carrito-info .carrito-juegos .carrito-precio {
   color: #FFD700;
   font-family: "Bebas Neue", cursive;
   font-size: 2em;
   width: 15%;
   text-align: center;
+  margin-left: 5px;
 }
-.modal-carrito-container .carrito-info .carrito-productos .eliminar-producto {
+.modal-carrito-container .carrito-info .carrito-juegos .eliminar-juego {
   background-color: transparent;
   border: none;
   color: #D72323;
   font-size: 50px;
   cursor: pointer;
 }
-.modal-carrito-container .carrito-info .carrito-productos .eliminar-producto:active {
+.modal-carrito-container .carrito-info .carrito-juegos .eliminar-juego:active {
   color: #A1E5F5;
+}
+.modal-carrito-container .carrito-info .carrito-vacio {
+  color: #A1E5F5;
+  font-family: "VT323", monospace;
+  font-size: 5em;
+  text-align: center;
+  padding: 10px;
+}
+.modal-carrito-container .carrito-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0A261F;
+  border-top: 2px solid #51E5A1;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  padding: 10px;
+}
+.modal-carrito-container .carrito-footer .vaciar-carrito {
+  width: 350px;
+  height: 40px;
+  background-color: #D72323;
+  border: none;
+  border-radius: 50px;
+  color: #A1E5F5;
+  font-family: "Staatliches", cursive;
+  font-size: 1.3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+}
+.modal-carrito-container .carrito-footer .vaciar-carrito:active {
+  color: #0A261F;
+  background-color: #A1E5F5;
+}
+.modal-carrito-container .carrito-footer .total-carrito,
+.modal-carrito-container .carrito-footer .precio-total {
+  color: #51E5A1;
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.75em;
+}
+.modal-carrito-container .carrito-footer .precio-total {
+  padding-right: 55px;
 }
 
 .bgmodals {
@@ -683,6 +724,27 @@ body {
 
 .ocultar {
   display: none;
+}
+
+.alerta-juego-agregado {
+  color: #0A261F;
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.6em !important;
+  letter-spacing: 0.5px;
+}
+
+.alerta-juego-eliminado {
+  color: #A1E5F5;
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.4em !important;
+  letter-spacing: 2px;
+}
+
+.alerta-carrito-vacio {
+  color: #2323D7;
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.8em !important;
+  letter-spacing: 2px;
 }
 
 footer {
